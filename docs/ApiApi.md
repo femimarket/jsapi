@@ -74,6 +74,9 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Upload successful |  -  |
+| **400** | Bad request |  -  |
+| **402** | Payment required |  -  |
+| **409** | Conflict |  -  |
 | **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
