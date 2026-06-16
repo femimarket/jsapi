@@ -4,14 +4,14 @@ All URIs are relative to *https://api.earnfemi.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**api**](ApiApi.md#api) | **POST** /api |  |
+| [**apiHandler**](ApiApi.md#apihandler) | **POST** /api |  |
 | [**mediaGate**](ApiApi.md#mediagate) | **GET** /{file} | Auth + per-GB debit gate in front of the &#x60;_upload&#x60; ServeDir on femi.market.   - not a media file → pass through (static site, app data, 404), free   - media file that isn\&#39;t a real file in &#x60;_upload&#x60; → pass through, free   - media file in &#x60;_upload&#x60; → require Bearer, charge &#x60;size × pricing.gb&#x60;,     record a debit in the astc ledger, then let ServeDir stream the bytes. The gate only authorizes/charges; ServeDir still does the actual file streaming (range requests, mime, etc.). |
 
 
 
-## api
+## apiHandler
 
-> API api(action, audio, balance, credit, file, id, image, messages, model, pay, pricing, prompt, requestId, status, userId)
+> API apiHandler(aPI)
 
 
 
@@ -22,7 +22,7 @@ import {
   Configuration,
   ApiApi,
 } from 'jsapi';
-import type { ApiRequest } from 'jsapi';
+import type { ApiHandlerRequest } from 'jsapi';
 
 async function example() {
   console.log("🚀 Testing jsapi SDK...");
@@ -33,40 +33,12 @@ async function example() {
   const api = new ApiApi(config);
 
   const body = {
-    // ApiAction
-    action: ...,
-    // string | filename of already uploaded audio else default
-    audio: audio_example,
-    // number
-    balance: 789,
-    // number
-    credit: 789,
-    // string | filename of result to retrieve
-    file: file_example,
-    // string | uuid v7
-    id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-    // string | filename of already uploaded image else default
-    image: image_example,
-    // Array<ApiChatMessage> | default value is non-empty array
-    messages: ...,
-    // ApiAiModel
-    model: ...,
-    // ApiPay
-    pay: ...,
-    // ApiPricing
-    pricing: ...,
-    // string
-    prompt: prompt_example,
-    // string | transient, managed by server
-    requestId: requestId_example,
-    // ApiStatus
-    status: ...,
-    // string
-    userId: userId_example,
-  } satisfies ApiRequest;
+    // API
+    aPI: ...,
+  } satisfies ApiHandlerRequest;
 
   try {
-    const data = await api.api(body);
+    const data = await api.apiHandler(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -82,21 +54,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **action** | `ApiAction` |  | [Defaults to `undefined`] [Enum: Generate, Poll, Pay, Chat, Balance, Pricing] |
-| **audio** | `string` | filename of already uploaded audio else default | [Defaults to `undefined`] |
-| **balance** | `number` |  | [Defaults to `undefined`] |
-| **credit** | `number` |  | [Defaults to `undefined`] |
-| **file** | `string` | filename of result to retrieve | [Defaults to `undefined`] |
-| **id** | `string` | uuid v7 | [Defaults to `undefined`] |
-| **image** | `string` | filename of already uploaded image else default | [Defaults to `undefined`] |
-| **messages** | `Array<ApiChatMessage>` | default value is non-empty array | |
-| **model** | `ApiAiModel` |  | [Defaults to `undefined`] [Enum: ZImageTurbo, NanoBanana2, Flux2Pro, Ltx2_3A2V] |
-| **pay** | [ApiPay](ApiPay.md) |  | [Defaults to `undefined`] |
-| **pricing** | [ApiPricing](ApiPricing.md) |  | [Defaults to `undefined`] |
-| **prompt** | `string` |  | [Defaults to `undefined`] |
-| **requestId** | `string` | transient, managed by server | [Defaults to `undefined`] |
-| **status** | `ApiStatus` |  | [Defaults to `undefined`] [Enum: Pending, Completed, Failed] |
-| **userId** | `string` |  | [Defaults to `undefined`] |
+| **aPI** | [API](API.md) |  | |
 
 ### Return type
 
@@ -108,7 +66,7 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `multipart/form-data`
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`, `text/plain`
 
 

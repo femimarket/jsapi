@@ -19,53 +19,9 @@ import {
     APIFromJSON,
     APIToJSON,
 } from '../models/API';
-import {
-    type ApiAction,
-    ApiActionFromJSON,
-    ApiActionToJSON,
-} from '../models/ApiAction';
-import {
-    type ApiAiModel,
-    ApiAiModelFromJSON,
-    ApiAiModelToJSON,
-} from '../models/ApiAiModel';
-import {
-    type ApiChatMessage,
-    ApiChatMessageFromJSON,
-    ApiChatMessageToJSON,
-} from '../models/ApiChatMessage';
-import {
-    type ApiPay,
-    ApiPayFromJSON,
-    ApiPayToJSON,
-} from '../models/ApiPay';
-import {
-    type ApiPricing,
-    ApiPricingFromJSON,
-    ApiPricingToJSON,
-} from '../models/ApiPricing';
-import {
-    type ApiStatus,
-    ApiStatusFromJSON,
-    ApiStatusToJSON,
-} from '../models/ApiStatus';
 
-export interface ApiRequest {
-    action: ApiAction;
-    audio: string;
-    balance: number;
-    credit: number;
-    file: string;
-    id: string;
-    image: string;
-    messages: Array<ApiChatMessage>;
-    model: ApiAiModel;
-    pay: ApiPay;
-    pricing: ApiPricing;
-    prompt: string;
-    requestId: string;
-    status: ApiStatus;
-    userId: string;
+export interface ApiHandlerRequest {
+    aPI: API;
 }
 
 export interface MediaGateRequest {
@@ -80,53 +36,25 @@ export interface MediaGateRequest {
  */
 export interface ApiApiInterface {
     /**
-     * Creates request options for api without sending the request
-     * @param {ApiAction} action 
-     * @param {string} audio filename of already uploaded audio else default
-     * @param {number} balance 
-     * @param {number} credit 
-     * @param {string} file filename of result to retrieve
-     * @param {string} id uuid v7
-     * @param {string} image filename of already uploaded image else default
-     * @param {Array<ApiChatMessage>} messages default value is non-empty array
-     * @param {ApiAiModel} model 
-     * @param {ApiPay} pay 
-     * @param {ApiPricing} pricing 
-     * @param {string} prompt 
-     * @param {string} requestId transient, managed by server
-     * @param {ApiStatus} status 
-     * @param {string} userId 
+     * Creates request options for apiHandler without sending the request
+     * @param {API} aPI 
      * @throws {RequiredError}
      * @memberof ApiApiInterface
      */
-    apiRequestOpts(requestParameters: ApiRequest): Promise<runtime.RequestOpts>;
+    apiHandlerRequestOpts(requestParameters: ApiHandlerRequest): Promise<runtime.RequestOpts>;
 
     /**
      * 
-     * @param {ApiAction} action 
-     * @param {string} audio filename of already uploaded audio else default
-     * @param {number} balance 
-     * @param {number} credit 
-     * @param {string} file filename of result to retrieve
-     * @param {string} id uuid v7
-     * @param {string} image filename of already uploaded image else default
-     * @param {Array<ApiChatMessage>} messages default value is non-empty array
-     * @param {ApiAiModel} model 
-     * @param {ApiPay} pay 
-     * @param {ApiPricing} pricing 
-     * @param {string} prompt 
-     * @param {string} requestId transient, managed by server
-     * @param {ApiStatus} status 
-     * @param {string} userId 
+     * @param {API} aPI 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ApiApiInterface
      */
-    apiRaw(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>>;
+    apiHandlerRaw(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>>;
 
     /**
      */
-    api(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API>;
+    apiHandler(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API>;
 
     /**
      * Creates request options for mediaGate without sending the request
@@ -160,117 +88,21 @@ export interface ApiApiInterface {
 export class ApiApi extends runtime.BaseAPI implements ApiApiInterface {
 
     /**
-     * Creates request options for api without sending the request
+     * Creates request options for apiHandler without sending the request
      */
-    async apiRequestOpts(requestParameters: ApiRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['action'] == null) {
+    async apiHandlerRequestOpts(requestParameters: ApiHandlerRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['aPI'] == null) {
             throw new runtime.RequiredError(
-                'action',
-                'Required parameter "action" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['audio'] == null) {
-            throw new runtime.RequiredError(
-                'audio',
-                'Required parameter "audio" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['balance'] == null) {
-            throw new runtime.RequiredError(
-                'balance',
-                'Required parameter "balance" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['credit'] == null) {
-            throw new runtime.RequiredError(
-                'credit',
-                'Required parameter "credit" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['file'] == null) {
-            throw new runtime.RequiredError(
-                'file',
-                'Required parameter "file" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['image'] == null) {
-            throw new runtime.RequiredError(
-                'image',
-                'Required parameter "image" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['messages'] == null) {
-            throw new runtime.RequiredError(
-                'messages',
-                'Required parameter "messages" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['model'] == null) {
-            throw new runtime.RequiredError(
-                'model',
-                'Required parameter "model" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['pay'] == null) {
-            throw new runtime.RequiredError(
-                'pay',
-                'Required parameter "pay" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['pricing'] == null) {
-            throw new runtime.RequiredError(
-                'pricing',
-                'Required parameter "pricing" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['prompt'] == null) {
-            throw new runtime.RequiredError(
-                'prompt',
-                'Required parameter "prompt" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['requestId'] == null) {
-            throw new runtime.RequiredError(
-                'requestId',
-                'Required parameter "requestId" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['status'] == null) {
-            throw new runtime.RequiredError(
-                'status',
-                'Required parameter "status" was null or undefined when calling api().'
-            );
-        }
-
-        if (requestParameters['userId'] == null) {
-            throw new runtime.RequiredError(
-                'userId',
-                'Required parameter "userId" was null or undefined when calling api().'
+                'aPI',
+                'Required parameter "aPI" was null or undefined when calling apiHandler().'
             );
         }
 
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
 
         if (this.configuration && this.configuration.accessToken) {
             const token = this.configuration.accessToken;
@@ -280,81 +112,6 @@ export class ApiApi extends runtime.BaseAPI implements ApiApiInterface {
                 headerParameters["Authorization"] = `Bearer ${tokenString}`;
             }
         }
-        const consumes: runtime.Consume[] = [
-            { contentType: 'multipart/form-data' },
-        ];
-        // @ts-ignore: canConsumeForm may be unused
-        const canConsumeForm = runtime.canConsumeForm(consumes);
-
-        let formParams: { append(param: string, value: any): any };
-        // use FormData when the endpoint consumes multipart/form-data, URLSearchParams otherwise
-        const useForm = canConsumeForm;
-        if (useForm) {
-            formParams = new FormData();
-        } else {
-            formParams = new URLSearchParams();
-        }
-
-        if (requestParameters['action'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'action', ApiActionToJSON(requestParameters['action']));
-        }
-
-        if (requestParameters['audio'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'audio', requestParameters['audio']);
-        }
-
-        if (requestParameters['balance'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'balance', requestParameters['balance']);
-        }
-
-        if (requestParameters['credit'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'credit', requestParameters['credit']);
-        }
-
-        if (requestParameters['file'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'file', requestParameters['file']);
-        }
-
-        if (requestParameters['id'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'id', requestParameters['id']);
-        }
-
-        if (requestParameters['image'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'image', requestParameters['image']);
-        }
-
-        if (requestParameters['messages'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'messages', requestParameters['messages']!.map(ApiChatMessageToJSON));
-        }
-
-        if (requestParameters['model'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'model', ApiAiModelToJSON(requestParameters['model']));
-        }
-
-        if (requestParameters['pay'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'pay', ApiPayToJSON(requestParameters['pay']));
-        }
-
-        if (requestParameters['pricing'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'pricing', ApiPricingToJSON(requestParameters['pricing']));
-        }
-
-        if (requestParameters['prompt'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'prompt', requestParameters['prompt']);
-        }
-
-        if (requestParameters['requestId'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'request_id', requestParameters['requestId']);
-        }
-
-        if (requestParameters['status'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'status', ApiStatusToJSON(requestParameters['status']));
-        }
-
-        if (requestParameters['userId'] != null) {
-            appendBracket(formParams as FormData | URLSearchParams, 'user_id', requestParameters['userId']);
-        }
-
 
         let urlPath = `/api`;
 
@@ -363,14 +120,14 @@ export class ApiApi extends runtime.BaseAPI implements ApiApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: formParams,
+            body: APIToJSON(requestParameters['aPI']),
         };
     }
 
     /**
      */
-    async apiRaw(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>> {
-        const requestOptions = await this.apiRequestOpts(requestParameters);
+    async apiHandlerRaw(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>> {
+        const requestOptions = await this.apiHandlerRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => APIFromJSON(jsonValue));
@@ -378,8 +135,8 @@ export class ApiApi extends runtime.BaseAPI implements ApiApiInterface {
 
     /**
      */
-    async api(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API> {
-        const response = await this.apiRaw(requestParameters, initOverrides);
+    async apiHandler(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API> {
+        const response = await this.apiHandlerRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

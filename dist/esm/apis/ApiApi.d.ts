@@ -11,28 +11,8 @@
  */
 import * as runtime from '../runtime';
 import { type API } from '../models/API';
-import { type ApiAction } from '../models/ApiAction';
-import { type ApiAiModel } from '../models/ApiAiModel';
-import { type ApiChatMessage } from '../models/ApiChatMessage';
-import { type ApiPay } from '../models/ApiPay';
-import { type ApiPricing } from '../models/ApiPricing';
-import { type ApiStatus } from '../models/ApiStatus';
-export interface ApiRequest {
-    action: ApiAction;
-    audio: string;
-    balance: number;
-    credit: number;
-    file: string;
-    id: string;
-    image: string;
-    messages: Array<ApiChatMessage>;
-    model: ApiAiModel;
-    pay: ApiPay;
-    pricing: ApiPricing;
-    prompt: string;
-    requestId: string;
-    status: ApiStatus;
-    userId: string;
+export interface ApiHandlerRequest {
+    aPI: API;
 }
 export interface MediaGateRequest {
     file: string;
@@ -45,51 +25,23 @@ export interface MediaGateRequest {
  */
 export interface ApiApiInterface {
     /**
-     * Creates request options for api without sending the request
-     * @param {ApiAction} action
-     * @param {string} audio filename of already uploaded audio else default
-     * @param {number} balance
-     * @param {number} credit
-     * @param {string} file filename of result to retrieve
-     * @param {string} id uuid v7
-     * @param {string} image filename of already uploaded image else default
-     * @param {Array<ApiChatMessage>} messages default value is non-empty array
-     * @param {ApiAiModel} model
-     * @param {ApiPay} pay
-     * @param {ApiPricing} pricing
-     * @param {string} prompt
-     * @param {string} requestId transient, managed by server
-     * @param {ApiStatus} status
-     * @param {string} userId
+     * Creates request options for apiHandler without sending the request
+     * @param {API} aPI
      * @throws {RequiredError}
      * @memberof ApiApiInterface
      */
-    apiRequestOpts(requestParameters: ApiRequest): Promise<runtime.RequestOpts>;
+    apiHandlerRequestOpts(requestParameters: ApiHandlerRequest): Promise<runtime.RequestOpts>;
     /**
      *
-     * @param {ApiAction} action
-     * @param {string} audio filename of already uploaded audio else default
-     * @param {number} balance
-     * @param {number} credit
-     * @param {string} file filename of result to retrieve
-     * @param {string} id uuid v7
-     * @param {string} image filename of already uploaded image else default
-     * @param {Array<ApiChatMessage>} messages default value is non-empty array
-     * @param {ApiAiModel} model
-     * @param {ApiPay} pay
-     * @param {ApiPricing} pricing
-     * @param {string} prompt
-     * @param {string} requestId transient, managed by server
-     * @param {ApiStatus} status
-     * @param {string} userId
+     * @param {API} aPI
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ApiApiInterface
      */
-    apiRaw(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>>;
+    apiHandlerRaw(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>>;
     /**
      */
-    api(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API>;
+    apiHandler(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API>;
     /**
      * Creates request options for mediaGate without sending the request
      * @param {string} file media filename in _upload
@@ -117,15 +69,15 @@ export interface ApiApiInterface {
  */
 export declare class ApiApi extends runtime.BaseAPI implements ApiApiInterface {
     /**
-     * Creates request options for api without sending the request
+     * Creates request options for apiHandler without sending the request
      */
-    apiRequestOpts(requestParameters: ApiRequest): Promise<runtime.RequestOpts>;
+    apiHandlerRequestOpts(requestParameters: ApiHandlerRequest): Promise<runtime.RequestOpts>;
     /**
      */
-    apiRaw(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>>;
+    apiHandlerRaw(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<API>>;
     /**
      */
-    api(requestParameters: ApiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API>;
+    apiHandler(requestParameters: ApiHandlerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<API>;
     /**
      * Creates request options for mediaGate without sending the request
      */

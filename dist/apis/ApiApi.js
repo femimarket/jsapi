@@ -15,69 +15,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiApi = void 0;
 const runtime = require("../runtime");
-const runtime_1 = require("../runtime");
 const API_1 = require("../models/API");
-const ApiAction_1 = require("../models/ApiAction");
-const ApiAiModel_1 = require("../models/ApiAiModel");
-const ApiChatMessage_1 = require("../models/ApiChatMessage");
-const ApiPay_1 = require("../models/ApiPay");
-const ApiPricing_1 = require("../models/ApiPricing");
-const ApiStatus_1 = require("../models/ApiStatus");
 /**
  *
  */
 class ApiApi extends runtime.BaseAPI {
     /**
-     * Creates request options for api without sending the request
+     * Creates request options for apiHandler without sending the request
      */
-    async apiRequestOpts(requestParameters) {
-        if (requestParameters['action'] == null) {
-            throw new runtime.RequiredError('action', 'Required parameter "action" was null or undefined when calling api().');
-        }
-        if (requestParameters['audio'] == null) {
-            throw new runtime.RequiredError('audio', 'Required parameter "audio" was null or undefined when calling api().');
-        }
-        if (requestParameters['balance'] == null) {
-            throw new runtime.RequiredError('balance', 'Required parameter "balance" was null or undefined when calling api().');
-        }
-        if (requestParameters['credit'] == null) {
-            throw new runtime.RequiredError('credit', 'Required parameter "credit" was null or undefined when calling api().');
-        }
-        if (requestParameters['file'] == null) {
-            throw new runtime.RequiredError('file', 'Required parameter "file" was null or undefined when calling api().');
-        }
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling api().');
-        }
-        if (requestParameters['image'] == null) {
-            throw new runtime.RequiredError('image', 'Required parameter "image" was null or undefined when calling api().');
-        }
-        if (requestParameters['messages'] == null) {
-            throw new runtime.RequiredError('messages', 'Required parameter "messages" was null or undefined when calling api().');
-        }
-        if (requestParameters['model'] == null) {
-            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling api().');
-        }
-        if (requestParameters['pay'] == null) {
-            throw new runtime.RequiredError('pay', 'Required parameter "pay" was null or undefined when calling api().');
-        }
-        if (requestParameters['pricing'] == null) {
-            throw new runtime.RequiredError('pricing', 'Required parameter "pricing" was null or undefined when calling api().');
-        }
-        if (requestParameters['prompt'] == null) {
-            throw new runtime.RequiredError('prompt', 'Required parameter "prompt" was null or undefined when calling api().');
-        }
-        if (requestParameters['requestId'] == null) {
-            throw new runtime.RequiredError('requestId', 'Required parameter "requestId" was null or undefined when calling api().');
-        }
-        if (requestParameters['status'] == null) {
-            throw new runtime.RequiredError('status', 'Required parameter "status" was null or undefined when calling api().');
-        }
-        if (requestParameters['userId'] == null) {
-            throw new runtime.RequiredError('userId', 'Required parameter "userId" was null or undefined when calling api().');
+    async apiHandlerRequestOpts(requestParameters) {
+        if (requestParameters['aPI'] == null) {
+            throw new runtime.RequiredError('aPI', 'Required parameter "aPI" was null or undefined when calling apiHandler().');
         }
         const queryParameters = {};
         const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
         if (this.configuration && this.configuration.accessToken) {
             const token = this.configuration.accessToken;
             const tokenString = await token("bearer", []);
@@ -85,85 +37,26 @@ class ApiApi extends runtime.BaseAPI {
                 headerParameters["Authorization"] = `Bearer ${tokenString}`;
             }
         }
-        const consumes = [
-            { contentType: 'multipart/form-data' },
-        ];
-        // @ts-ignore: canConsumeForm may be unused
-        const canConsumeForm = runtime.canConsumeForm(consumes);
-        let formParams;
-        // use FormData when the endpoint consumes multipart/form-data, URLSearchParams otherwise
-        const useForm = canConsumeForm;
-        if (useForm) {
-            formParams = new FormData();
-        }
-        else {
-            formParams = new URLSearchParams();
-        }
-        if (requestParameters['action'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'action', (0, ApiAction_1.ApiActionToJSON)(requestParameters['action']));
-        }
-        if (requestParameters['audio'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'audio', requestParameters['audio']);
-        }
-        if (requestParameters['balance'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'balance', requestParameters['balance']);
-        }
-        if (requestParameters['credit'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'credit', requestParameters['credit']);
-        }
-        if (requestParameters['file'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'file', requestParameters['file']);
-        }
-        if (requestParameters['id'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'id', requestParameters['id']);
-        }
-        if (requestParameters['image'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'image', requestParameters['image']);
-        }
-        if (requestParameters['messages'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'messages', requestParameters['messages'].map(ApiChatMessage_1.ApiChatMessageToJSON));
-        }
-        if (requestParameters['model'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'model', (0, ApiAiModel_1.ApiAiModelToJSON)(requestParameters['model']));
-        }
-        if (requestParameters['pay'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'pay', (0, ApiPay_1.ApiPayToJSON)(requestParameters['pay']));
-        }
-        if (requestParameters['pricing'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'pricing', (0, ApiPricing_1.ApiPricingToJSON)(requestParameters['pricing']));
-        }
-        if (requestParameters['prompt'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'prompt', requestParameters['prompt']);
-        }
-        if (requestParameters['requestId'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'request_id', requestParameters['requestId']);
-        }
-        if (requestParameters['status'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'status', (0, ApiStatus_1.ApiStatusToJSON)(requestParameters['status']));
-        }
-        if (requestParameters['userId'] != null) {
-            (0, runtime_1.appendBracket)(formParams, 'user_id', requestParameters['userId']);
-        }
         let urlPath = `/api`;
         return {
             path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: formParams,
+            body: (0, API_1.APIToJSON)(requestParameters['aPI']),
         };
     }
     /**
      */
-    async apiRaw(requestParameters, initOverrides) {
-        const requestOptions = await this.apiRequestOpts(requestParameters);
+    async apiHandlerRaw(requestParameters, initOverrides) {
+        const requestOptions = await this.apiHandlerRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, API_1.APIFromJSON)(jsonValue));
     }
     /**
      */
-    async api(requestParameters, initOverrides) {
-        const response = await this.apiRaw(requestParameters, initOverrides);
+    async apiHandler(requestParameters, initOverrides) {
+        const response = await this.apiHandlerRaw(requestParameters, initOverrides);
         return await response.value();
     }
     /**

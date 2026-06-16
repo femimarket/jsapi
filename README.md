@@ -18,7 +18,7 @@ import {
   Configuration,
   ApiApi,
 } from 'jsapi';
-import type { ApiRequest } from 'jsapi';
+import type { ApiHandlerRequest } from 'jsapi';
 
 async function example() {
   console.log("🚀 Testing jsapi SDK...");
@@ -29,40 +29,12 @@ async function example() {
   const api = new ApiApi(config);
 
   const body = {
-    // ApiAction
-    action: ...,
-    // string | filename of already uploaded audio else default
-    audio: audio_example,
-    // number
-    balance: 789,
-    // number
-    credit: 789,
-    // string | filename of result to retrieve
-    file: file_example,
-    // string | uuid v7
-    id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-    // string | filename of already uploaded image else default
-    image: image_example,
-    // Array<ApiChatMessage> | default value is non-empty array
-    messages: ...,
-    // ApiAiModel
-    model: ...,
-    // ApiPay
-    pay: ...,
-    // ApiPricing
-    pricing: ...,
-    // string
-    prompt: prompt_example,
-    // string | transient, managed by server
-    requestId: requestId_example,
-    // ApiStatus
-    status: ...,
-    // string
-    userId: userId_example,
-  } satisfies ApiRequest;
+    // API
+    aPI: ...,
+  } satisfies ApiHandlerRequest;
 
   try {
-    const data = await api.api(body);
+    const data = await api.apiHandler(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -82,7 +54,7 @@ All URIs are relative to *https://api.earnfemi.com*
 
 | Class | Method | HTTP request | Description
 | ----- | ------ | ------------ | -------------
-*ApiApi* | [**api**](docs/ApiApi.md#api) | **POST** /api | 
+*ApiApi* | [**apiHandler**](docs/ApiApi.md#apihandler) | **POST** /api | 
 *ApiApi* | [**mediaGate**](docs/ApiApi.md#mediagate) | **GET** /{file} | Auth + per-GB debit gate in front of the &#x60;_upload&#x60; ServeDir on femi.market.   - not a media file → pass through (static site, app data, 404), free   - media file that isn\&#39;t a real file in &#x60;_upload&#x60; → pass through, free   - media file in &#x60;_upload&#x60; → require Bearer, charge &#x60;size × pricing.gb&#x60;,     record a debit in the astc ledger, then let ServeDir stream the bytes. The gate only authorizes/charges; ServeDir still does the actual file streaming (range requests, mime, etc.).
 *ApiKeyRouteApi* | [**apiKey**](docs/ApiKeyRouteApi.md#apikey) | **POST** /api_key | 
 *ApplePayRouteApi* | [**applePay**](docs/ApplePayRouteApi.md#applepay) | **POST** /apple_pay | 
