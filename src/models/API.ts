@@ -41,13 +41,6 @@ import {
     ApiStatusToJSON,
     ApiStatusToJSONTyped,
 } from './ApiStatus';
-import type { ApiPricing } from './ApiPricing';
-import {
-    ApiPricingFromJSON,
-    ApiPricingFromJSONTyped,
-    ApiPricingToJSON,
-    ApiPricingToJSONTyped,
-} from './ApiPricing';
 import type { ApiChatMessage } from './ApiChatMessage';
 import {
     ApiChatMessageFromJSON,
@@ -124,12 +117,6 @@ export interface API {
     pay: ApiPay;
     /**
      * 
-     * @type {ApiPricing}
-     * @memberof API
-     */
-    pricing: ApiPricing;
-    /**
-     * 
      * @type {string}
      * @memberof API
      */
@@ -170,7 +157,6 @@ export function instanceOfAPI(value: object): value is API {
     if (!('messages' in value) || value['messages'] === undefined) return false;
     if (!('model' in value) || value['model'] === undefined) return false;
     if (!('pay' in value) || value['pay'] === undefined) return false;
-    if (!('pricing' in value) || value['pricing'] === undefined) return false;
     if (!('prompt' in value) || value['prompt'] === undefined) return false;
     if (!('requestId' in value) || value['requestId'] === undefined) return false;
     if (!('status' in value) || value['status'] === undefined) return false;
@@ -198,7 +184,6 @@ export function APIFromJSONTyped(json: any, ignoreDiscriminator: boolean): API {
         'messages': ((json['messages'] as Array<any>).map(ApiChatMessageFromJSON)),
         'model': ApiAiModelFromJSON(json['model']),
         'pay': ApiPayFromJSON(json['pay']),
-        'pricing': ApiPricingFromJSON(json['pricing']),
         'prompt': json['prompt'],
         'requestId': json['request_id'],
         'status': ApiStatusFromJSON(json['status']),
@@ -227,7 +212,6 @@ export function APIToJSONTyped(value?: API | null, ignoreDiscriminator: boolean 
         'messages': ((value['messages'] as Array<any>).map(ApiChatMessageToJSON)),
         'model': ApiAiModelToJSON(value['model']),
         'pay': ApiPayToJSON(value['pay']),
-        'pricing': ApiPricingToJSON(value['pricing']),
         'prompt': value['prompt'],
         'request_id': value['requestId'],
         'status': ApiStatusToJSON(value['status']),

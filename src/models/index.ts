@@ -8,7 +8,6 @@ export * from './ApiChatRole';
 export * from './ApiKey';
 export * from './ApiPay';
 export * from './ApiPayProvider';
-export * from './ApiPricing';
 export * from './ApiStatus';
 export * from './ApplePay';
 export * from './ApplePayStatus';

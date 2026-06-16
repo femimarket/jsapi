@@ -16,11 +16,7 @@
  */
 export declare enum ApiAction {
     Generate = "Generate",
-    Poll = "Poll",
-    Pay = "Pay",
-    Chat = "Chat",
-    Balance = "Balance",
-    Pricing = "Pricing"
+    Pay = "Pay"
 }
 export declare function instanceOfApiAction(value: any): boolean;
 export declare function ApiActionFromJSON(json: any): ApiAction;

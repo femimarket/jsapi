@@ -19,11 +19,7 @@
  */
 export enum ApiAction {
     Generate = 'Generate',
-    Poll = 'Poll',
-    Pay = 'Pay',
-    Chat = 'Chat',
-    Balance = 'Balance',
-    Pricing = 'Pricing'
+    Pay = 'Pay'
 }
 
 

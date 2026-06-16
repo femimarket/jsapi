@@ -15,7 +15,6 @@ import { ApiAiModelFromJSON, ApiAiModelToJSON, } from './ApiAiModel';
 import { ApiActionFromJSON, ApiActionToJSON, } from './ApiAction';
 import { ApiPayFromJSON, ApiPayToJSON, } from './ApiPay';
 import { ApiStatusFromJSON, ApiStatusToJSON, } from './ApiStatus';
-import { ApiPricingFromJSON, ApiPricingToJSON, } from './ApiPricing';
 import { ApiChatMessageFromJSON, ApiChatMessageToJSON, } from './ApiChatMessage';
 /**
  * Check if a given object implements the API interface.
@@ -40,8 +39,6 @@ export function instanceOfAPI(value) {
     if (!('model' in value) || value['model'] === undefined)
         return false;
     if (!('pay' in value) || value['pay'] === undefined)
-        return false;
-    if (!('pricing' in value) || value['pricing'] === undefined)
         return false;
     if (!('prompt' in value) || value['prompt'] === undefined)
         return false;
@@ -71,7 +68,6 @@ export function APIFromJSONTyped(json, ignoreDiscriminator) {
         'messages': (json['messages'].map(ApiChatMessageFromJSON)),
         'model': ApiAiModelFromJSON(json['model']),
         'pay': ApiPayFromJSON(json['pay']),
-        'pricing': ApiPricingFromJSON(json['pricing']),
         'prompt': json['prompt'],
         'requestId': json['request_id'],
         'status': ApiStatusFromJSON(json['status']),
@@ -96,7 +92,6 @@ export function APIToJSONTyped(value, ignoreDiscriminator = false) {
         'messages': (value['messages'].map(ApiChatMessageToJSON)),
         'model': ApiAiModelToJSON(value['model']),
         'pay': ApiPayToJSON(value['pay']),
-        'pricing': ApiPricingToJSON(value['pricing']),
         'prompt': value['prompt'],
         'request_id': value['requestId'],
         'status': ApiStatusToJSON(value['status']),

@@ -24,7 +24,6 @@ __exportStar(require("./ApiChatRole"), exports);
 __exportStar(require("./ApiKey"), exports);
 __exportStar(require("./ApiPay"), exports);
 __exportStar(require("./ApiPayProvider"), exports);
-__exportStar(require("./ApiPricing"), exports);
 __exportStar(require("./ApiStatus"), exports);
 __exportStar(require("./ApplePay"), exports);
 __exportStar(require("./ApplePayStatus"), exports);

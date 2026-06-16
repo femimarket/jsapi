@@ -12,7 +12,6 @@ docs/ApiKey.md
 docs/ApiKeyRouteApi.md
 docs/ApiPay.md
 docs/ApiPayProvider.md
-docs/ApiPricing.md
 docs/ApiStatus.md
 docs/ApplePay.md
 docs/ApplePayRouteApi.md
@@ -68,7 +67,6 @@ src/models/ApiChatRole.ts
 src/models/ApiKey.ts
 src/models/ApiPay.ts
 src/models/ApiPayProvider.ts
-src/models/ApiPricing.ts
 src/models/ApiStatus.ts
 src/models/ApplePay.ts
 src/models/ApplePayStatus.ts

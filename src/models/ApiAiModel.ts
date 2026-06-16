@@ -21,7 +21,8 @@ export enum ApiAiModel {
     ZImageTurbo = 'ZImageTurbo',
     NanoBanana2 = 'NanoBanana2',
     Flux2Pro = 'Flux2Pro',
-    Ltx23A2V = 'Ltx2_3A2V'
+    Ltx23A2V = 'Ltx2_3A2V',
+    NgrokText = 'NgrokText'
 }
 
 

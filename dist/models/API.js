@@ -22,7 +22,6 @@ const ApiAiModel_1 = require("./ApiAiModel");
 const ApiAction_1 = require("./ApiAction");
 const ApiPay_1 = require("./ApiPay");
 const ApiStatus_1 = require("./ApiStatus");
-const ApiPricing_1 = require("./ApiPricing");
 const ApiChatMessage_1 = require("./ApiChatMessage");
 /**
  * Check if a given object implements the API interface.
@@ -47,8 +46,6 @@ function instanceOfAPI(value) {
     if (!('model' in value) || value['model'] === undefined)
         return false;
     if (!('pay' in value) || value['pay'] === undefined)
-        return false;
-    if (!('pricing' in value) || value['pricing'] === undefined)
         return false;
     if (!('prompt' in value) || value['prompt'] === undefined)
         return false;
@@ -78,7 +75,6 @@ function APIFromJSONTyped(json, ignoreDiscriminator) {
         'messages': (json['messages'].map(ApiChatMessage_1.ApiChatMessageFromJSON)),
         'model': (0, ApiAiModel_1.ApiAiModelFromJSON)(json['model']),
         'pay': (0, ApiPay_1.ApiPayFromJSON)(json['pay']),
-        'pricing': (0, ApiPricing_1.ApiPricingFromJSON)(json['pricing']),
         'prompt': json['prompt'],
         'requestId': json['request_id'],
         'status': (0, ApiStatus_1.ApiStatusFromJSON)(json['status']),
@@ -103,7 +99,6 @@ function APIToJSONTyped(value, ignoreDiscriminator = false) {
         'messages': (value['messages'].map(ApiChatMessage_1.ApiChatMessageToJSON)),
         'model': (0, ApiAiModel_1.ApiAiModelToJSON)(value['model']),
         'pay': (0, ApiPay_1.ApiPayToJSON)(value['pay']),
-        'pricing': (0, ApiPricing_1.ApiPricingToJSON)(value['pricing']),
         'prompt': value['prompt'],
         'request_id': value['requestId'],
         'status': (0, ApiStatus_1.ApiStatusToJSON)(value['status']),

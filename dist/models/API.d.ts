@@ -13,7 +13,6 @@ import type { ApiAiModel } from './ApiAiModel';
 import type { ApiAction } from './ApiAction';
 import type { ApiPay } from './ApiPay';
 import type { ApiStatus } from './ApiStatus';
-import type { ApiPricing } from './ApiPricing';
 import type { ApiChatMessage } from './ApiChatMessage';
 /**
  * default values
@@ -81,12 +80,6 @@ export interface API {
      * @memberof API
      */
     pay: ApiPay;
-    /**
-     *
-     * @type {ApiPricing}
-     * @memberof API
-     */
-    pricing: ApiPricing;
     /**
      *
      * @type {string}

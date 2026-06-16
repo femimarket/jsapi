@@ -17,7 +17,6 @@ Name | Type
 `messages` | [Array&lt;ApiChatMessage&gt;](ApiChatMessage.md)
 `model` | [ApiAiModel](ApiAiModel.md)
 `pay` | [ApiPay](ApiPay.md)
-`pricing` | [ApiPricing](ApiPricing.md)
 `prompt` | string
 `requestId` | string
 `status` | [ApiStatus](ApiStatus.md)
@@ -40,7 +39,6 @@ const example = {
   "messages": null,
   "model": null,
   "pay": null,
-  "pricing": null,
   "prompt": null,
   "requestId": null,
   "status": null,

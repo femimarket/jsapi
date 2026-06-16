@@ -27,11 +27,7 @@ exports.ApiActionToJSONTyped = ApiActionToJSONTyped;
 var ApiAction;
 (function (ApiAction) {
     ApiAction["Generate"] = "Generate";
-    ApiAction["Poll"] = "Poll";
     ApiAction["Pay"] = "Pay";
-    ApiAction["Chat"] = "Chat";
-    ApiAction["Balance"] = "Balance";
-    ApiAction["Pricing"] = "Pricing";
 })(ApiAction || (exports.ApiAction = ApiAction = {}));
 function instanceOfApiAction(value) {
     for (const key in ApiAction) {

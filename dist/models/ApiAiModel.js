@@ -30,6 +30,7 @@ var ApiAiModel;
     ApiAiModel["NanoBanana2"] = "NanoBanana2";
     ApiAiModel["Flux2Pro"] = "Flux2Pro";
     ApiAiModel["Ltx23A2V"] = "Ltx2_3A2V";
+    ApiAiModel["NgrokText"] = "NgrokText";
 })(ApiAiModel || (exports.ApiAiModel = ApiAiModel = {}));
 function instanceOfApiAiModel(value) {
     for (const key in ApiAiModel) {
