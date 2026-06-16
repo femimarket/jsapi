@@ -1,6 +1,6 @@
 {
   "name": "jsapi",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "OpenAPI client for jsapi",
   "author": "OpenAPI-Generator",
   "repository": {
