@@ -33,6 +33,8 @@ function instanceOfApiPay(value) {
         return false;
     if (!('packageName' in value) || value['packageName'] === undefined)
         return false;
+    if (!('paymentUrl' in value) || value['paymentUrl'] === undefined)
+        return false;
     if (!('price' in value) || value['price'] === undefined)
         return false;
     if (!('productId' in value) || value['productId'] === undefined)
@@ -59,6 +61,7 @@ function ApiPayFromJSONTyped(json, ignoreDiscriminator) {
         'loaded': json['loaded'],
         'orderId': json['order_id'] == null ? undefined : json['order_id'],
         'packageName': json['package_name'],
+        'paymentUrl': json['payment_url'],
         'price': json['price'],
         'productId': json['product_id'],
         'provider': (0, ApiPayProvider_1.ApiPayProviderFromJSON)(json['provider']),
@@ -80,6 +83,7 @@ function ApiPayToJSONTyped(value, ignoreDiscriminator = false) {
         'loaded': value['loaded'],
         'order_id': value['orderId'],
         'package_name': value['packageName'],
+        'payment_url': value['paymentUrl'],
         'price': value['price'],
         'product_id': value['productId'],
         'provider': (0, ApiPayProvider_1.ApiPayProviderToJSON)(value['provider']),

@@ -20,6 +20,7 @@ export var ApiPayProvider;
 (function (ApiPayProvider) {
     ApiPayProvider["Apple"] = "Apple";
     ApiPayProvider["Google"] = "Google";
+    ApiPayProvider["Stripe"] = "Stripe";
 })(ApiPayProvider || (ApiPayProvider = {}));
 export function instanceOfApiPayProvider(value) {
     for (const key in ApiPayProvider) {

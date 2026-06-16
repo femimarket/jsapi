@@ -28,6 +28,7 @@ var ApiPayProvider;
 (function (ApiPayProvider) {
     ApiPayProvider["Apple"] = "Apple";
     ApiPayProvider["Google"] = "Google";
+    ApiPayProvider["Stripe"] = "Stripe";
 })(ApiPayProvider || (exports.ApiPayProvider = ApiPayProvider = {}));
 function instanceOfApiPayProvider(value) {
     for (const key in ApiPayProvider) {

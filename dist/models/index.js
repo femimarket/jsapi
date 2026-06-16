@@ -33,7 +33,6 @@ __exportStar(require("./CharacterAlignment"), exports);
 __exportStar(require("./Episode"), exports);
 __exportStar(require("./Faq"), exports);
 __exportStar(require("./LyricSync"), exports);
-__exportStar(require("./Model"), exports);
 __exportStar(require("./Pay"), exports);
 __exportStar(require("./PayProvider"), exports);
 __exportStar(require("./PayStatus"), exports);

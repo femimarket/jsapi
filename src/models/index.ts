@@ -17,7 +17,6 @@ export * from './CharacterAlignment';
 export * from './Episode';
 export * from './Faq';
 export * from './LyricSync';
-export * from './Model';
 export * from './Pay';
 export * from './PayProvider';
 export * from './PayStatus';

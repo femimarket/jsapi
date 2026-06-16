@@ -55,6 +55,8 @@ export interface ApiPay {
      * Google's per-purchase `orderId`, returned by the Play Developer API (not
      * the client). Not used for dedup — `ref_id` is — because promo-code
      * purchases may have no `orderId`.
+     * On the Stripe path, the same field carries the `payment_intent` id
+     * returned by `checkout.session.completed`.
      * @type {string}
      * @memberof ApiPay
      */
@@ -65,6 +67,13 @@ export interface ApiPay {
      * @memberof ApiPay
      */
     packageName: string;
+    /**
+     * Stripe only. Hosted-payment URL returned by `checkout.sessions.create` —
+     * empty until the server creates the session.
+     * @type {string}
+     * @memberof ApiPay
+     */
+    paymentUrl: string;
     /**
      * 
      * @type {number}
@@ -112,6 +121,7 @@ export function instanceOfApiPay(value: object): value is ApiPay {
     if (!('jws' in value) || value['jws'] === undefined) return false;
     if (!('loaded' in value) || value['loaded'] === undefined) return false;
     if (!('packageName' in value) || value['packageName'] === undefined) return false;
+    if (!('paymentUrl' in value) || value['paymentUrl'] === undefined) return false;
     if (!('price' in value) || value['price'] === undefined) return false;
     if (!('productId' in value) || value['productId'] === undefined) return false;
     if (!('provider' in value) || value['provider'] === undefined) return false;
@@ -136,6 +146,7 @@ export function ApiPayFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ap
         'loaded': json['loaded'],
         'orderId': json['order_id'] == null ? undefined : json['order_id'],
         'packageName': json['package_name'],
+        'paymentUrl': json['payment_url'],
         'price': json['price'],
         'productId': json['product_id'],
         'provider': ApiPayProviderFromJSON(json['provider']),
@@ -161,6 +172,7 @@ export function ApiPayToJSONTyped(value?: ApiPay | null, ignoreDiscriminator: bo
         'loaded': value['loaded'],
         'order_id': value['orderId'],
         'package_name': value['packageName'],
+        'payment_url': value['paymentUrl'],
         'price': value['price'],
         'product_id': value['productId'],
         'provider': ApiPayProviderToJSON(value['provider']),

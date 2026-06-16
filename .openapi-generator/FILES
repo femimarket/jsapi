@@ -23,7 +23,6 @@ docs/Episode.md
 docs/Faq.md
 docs/LyricSync.md
 docs/LyricSyncRouteApi.md
-docs/Model.md
 docs/Pay.md
 docs/PayProvider.md
 docs/PayRouteApi.md
@@ -40,7 +39,6 @@ docs/SolanaRouteApi.md
 docs/Square.md
 docs/SquareRouteApi.md
 docs/Status.md
-docs/StripeRouteApi.md
 docs/Upload.md
 docs/UploadRouteApi.md
 docs/Wise.md
@@ -57,7 +55,6 @@ src/apis/ProjectRouteApi.ts
 src/apis/RevolutRouteApi.ts
 src/apis/SolanaRouteApi.ts
 src/apis/SquareRouteApi.ts
-src/apis/StripeRouteApi.ts
 src/apis/UploadRouteApi.ts
 src/apis/WiseApi.ts
 src/apis/WiseRouteApi.ts
@@ -80,7 +77,6 @@ src/models/CharacterAlignment.ts
 src/models/Episode.ts
 src/models/Faq.ts
 src/models/LyricSync.ts
-src/models/Model.ts
 src/models/Pay.ts
 src/models/PayProvider.ts
 src/models/PayStatus.ts

@@ -16,7 +16,8 @@
  */
 export declare enum ApiPayProvider {
     Apple = "Apple",
-    Google = "Google"
+    Google = "Google",
+    Stripe = "Stripe"
 }
 export declare function instanceOfApiPayProvider(value: any): boolean;
 export declare function ApiPayProviderFromJSON(json: any): ApiPayProvider;

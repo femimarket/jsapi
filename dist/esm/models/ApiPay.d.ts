@@ -44,6 +44,8 @@ export interface ApiPay {
      * Google's per-purchase `orderId`, returned by the Play Developer API (not
      * the client). Not used for dedup — `ref_id` is — because promo-code
      * purchases may have no `orderId`.
+     * On the Stripe path, the same field carries the `payment_intent` id
+     * returned by `checkout.session.completed`.
      * @type {string}
      * @memberof ApiPay
      */
@@ -54,6 +56,13 @@ export interface ApiPay {
      * @memberof ApiPay
      */
     packageName: string;
+    /**
+     * Stripe only. Hosted-payment URL returned by `checkout.sessions.create` —
+     * empty until the server creates the session.
+     * @type {string}
+     * @memberof ApiPay
+     */
+    paymentUrl: string;
     /**
      *
      * @type {number}

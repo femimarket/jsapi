@@ -19,7 +19,8 @@
  */
 export enum ApiPayProvider {
     Apple = 'Apple',
-    Google = 'Google'
+    Google = 'Google',
+    Stripe = 'Stripe'
 }
 
 

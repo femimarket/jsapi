@@ -25,7 +25,6 @@ __exportStar(require("./ProjectRouteApi"), exports);
 __exportStar(require("./RevolutRouteApi"), exports);
 __exportStar(require("./SolanaRouteApi"), exports);
 __exportStar(require("./SquareRouteApi"), exports);
-__exportStar(require("./StripeRouteApi"), exports);
 __exportStar(require("./UploadRouteApi"), exports);
 __exportStar(require("./WiseApi"), exports);
 __exportStar(require("./WiseRouteApi"), exports);

@@ -13,6 +13,7 @@ Name | Type
 `loaded` | boolean
 `orderId` | string
 `packageName` | string
+`paymentUrl` | string
 `price` | number
 `productId` | string
 `provider` | [ApiPayProvider](ApiPayProvider.md)
@@ -32,6 +33,7 @@ const example = {
   "loaded": null,
   "orderId": null,
   "packageName": null,
+  "paymentUrl": null,
   "price": null,
   "productId": null,
   "provider": null,
