@@ -64,7 +64,6 @@ All URIs are relative to *https://api.earnfemi.com*
 *RevolutRouteApi* | [**revolut**](docs/RevolutRouteApi.md#revolut) | **POST** /revolut | 
 *SolanaRouteApi* | [**solana**](docs/SolanaRouteApi.md#solana) | **POST** /solana | 
 *SquareRouteApi* | [**square**](docs/SquareRouteApi.md#square) | **POST** /square | 
-*UploadRouteApi* | [**upload**](docs/UploadRouteApi.md#upload) | **POST** /upload | 
 *WiseApi* | [**wiseCheck**](docs/WiseApi.md#wisecheck) | **POST** /wise_check | 
 *WiseRouteApi* | [**wise**](docs/WiseRouteApi.md#wise) | **POST** /wise | 
 
@@ -98,7 +97,6 @@ All URIs are relative to *https://api.earnfemi.com*
 - [Solana](docs/Solana.md)
 - [Square](docs/Square.md)
 - [Status](docs/Status.md)
-- [Upload](docs/Upload.md)
 - [Wise](docs/Wise.md)
 - [WordAlignment](docs/WordAlignment.md)
 

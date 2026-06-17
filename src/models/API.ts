@@ -62,7 +62,7 @@ export interface API {
      */
     action: ApiAction;
     /**
-     * filename of already uploaded audio else default
+     * input audio as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
      * @type {string}
      * @memberof API
      */
@@ -92,7 +92,7 @@ export interface API {
      */
     id: string;
     /**
-     * filename of already uploaded image else default
+     * input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
      * @type {string}
      * @memberof API
      */

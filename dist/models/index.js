@@ -43,6 +43,5 @@ __exportStar(require("./Shot"), exports);
 __exportStar(require("./Solana"), exports);
 __exportStar(require("./Square"), exports);
 __exportStar(require("./Status"), exports);
-__exportStar(require("./Upload"), exports);
 __exportStar(require("./Wise"), exports);
 __exportStar(require("./WordAlignment"), exports);

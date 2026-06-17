@@ -25,6 +25,5 @@ export * from './Shot';
 export * from './Solana';
 export * from './Square';
 export * from './Status';
-export * from './Upload';
 export * from './Wise';
 export * from './WordAlignment';

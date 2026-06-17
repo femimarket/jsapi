@@ -38,8 +38,6 @@ docs/SolanaRouteApi.md
 docs/Square.md
 docs/SquareRouteApi.md
 docs/Status.md
-docs/Upload.md
-docs/UploadRouteApi.md
 docs/Wise.md
 docs/WiseApi.md
 docs/WiseRouteApi.md
@@ -54,7 +52,6 @@ src/apis/ProjectRouteApi.ts
 src/apis/RevolutRouteApi.ts
 src/apis/SolanaRouteApi.ts
 src/apis/SquareRouteApi.ts
-src/apis/UploadRouteApi.ts
 src/apis/WiseApi.ts
 src/apis/WiseRouteApi.ts
 src/apis/index.ts
@@ -86,7 +83,6 @@ src/models/Shot.ts
 src/models/Solana.ts
 src/models/Square.ts
 src/models/Status.ts
-src/models/Upload.ts
 src/models/Wise.ts
 src/models/WordAlignment.ts
 src/models/index.ts

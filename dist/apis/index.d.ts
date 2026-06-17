@@ -7,6 +7,5 @@ export * from './ProjectRouteApi';
 export * from './RevolutRouteApi';
 export * from './SolanaRouteApi';
 export * from './SquareRouteApi';
-export * from './UploadRouteApi';
 export * from './WiseApi';
 export * from './WiseRouteApi';
