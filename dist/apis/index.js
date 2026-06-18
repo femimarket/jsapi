@@ -16,14 +16,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 /* eslint-disable */
-__exportStar(require("./ApiApi"), exports);
+__exportStar(require("./ApiHandlerApi"), exports);
 __exportStar(require("./ApiKeyRouteApi"), exports);
-__exportStar(require("./ApplePayRouteApi"), exports);
-__exportStar(require("./LyricSyncRouteApi"), exports);
-__exportStar(require("./PayRouteApi"), exports);
-__exportStar(require("./ProjectRouteApi"), exports);
-__exportStar(require("./RevolutRouteApi"), exports);
-__exportStar(require("./SolanaRouteApi"), exports);
-__exportStar(require("./SquareRouteApi"), exports);
-__exportStar(require("./WiseApi"), exports);
-__exportStar(require("./WiseRouteApi"), exports);

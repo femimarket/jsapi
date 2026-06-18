@@ -9,11 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ApiAiModel } from './ApiAiModel';
 import type { ApiAction } from './ApiAction';
-import type { ApiPay } from './ApiPay';
 import type { ApiStatus } from './ApiStatus';
-import type { ApiChatMessage } from './ApiChatMessage';
 /**
  * default values
  * @export
@@ -27,71 +24,17 @@ export interface API {
      */
     action: ApiAction;
     /**
-     * input audio as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
-     * @type {string}
-     * @memberof API
-     */
-    audio: string;
-    /**
-     *
-     * @type {number}
-     * @memberof API
-     */
-    balance: number;
-    /**
-     *
+     * return only
      * @type {number}
      * @memberof API
      */
     credit: number;
     /**
-     * filename of result to retrieve
-     * @type {string}
-     * @memberof API
-     */
-    file: string;
-    /**
-     * uuid v7
+     * uuid v7 preferred
      * @type {string}
      * @memberof API
      */
     id: string;
-    /**
-     * input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
-     * @type {string}
-     * @memberof API
-     */
-    image: string;
-    /**
-     * default value is non-empty array
-     * @type {Array<ApiChatMessage>}
-     * @memberof API
-     */
-    messages: Array<ApiChatMessage>;
-    /**
-     *
-     * @type {ApiAiModel}
-     * @memberof API
-     */
-    model: ApiAiModel;
-    /**
-     *
-     * @type {ApiPay}
-     * @memberof API
-     */
-    pay: ApiPay;
-    /**
-     *
-     * @type {string}
-     * @memberof API
-     */
-    prompt: string;
-    /**
-     * transient, managed by server
-     * @type {string}
-     * @memberof API
-     */
-    requestId: string;
     /**
      *
      * @type {ApiStatus}

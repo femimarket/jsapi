@@ -6,6 +6,32 @@
 
 Name | Type
 ------------ | -------------
+`description` | string
+`type` | string
+`falRequestId` | string
+`file` | string
+`prompt` | string
+`audio` | string
+`comfyRequestId` | string
+`image` | string
+`messages` | [Array&lt;ApiChatMessage&gt;](ApiChatMessage.md)
+`amountCents` | number
+`credit` | number
+`loaded` | boolean
+`paymentUrl` | string
+`stripePaymentIntentId` | string
+`stripeSessionId` | string
+`currency` | string
+`jws` | string
+`price` | number
+`productId` | string
+`transactionId` | string
+`orderId` | string
+`packageName` | string
+`purchaseToken` | string
+`characters` | [Array&lt;CharacterAlignment&gt;](CharacterAlignment.md)
+`lyrics` | string
+`words` | [Array&lt;WordAlignment&gt;](WordAlignment.md)
 
 ## Example
 
@@ -14,6 +40,32 @@ import type { ApiAction } from 'jsapi'
 
 // TODO: Update the object below with actual values
 const example = {
+  "description": null,
+  "type": null,
+  "falRequestId": null,
+  "file": null,
+  "prompt": null,
+  "audio": null,
+  "comfyRequestId": null,
+  "image": null,
+  "messages": null,
+  "amountCents": null,
+  "credit": null,
+  "loaded": null,
+  "paymentUrl": null,
+  "stripePaymentIntentId": null,
+  "stripeSessionId": null,
+  "currency": null,
+  "jws": null,
+  "price": null,
+  "productId": null,
+  "transactionId": null,
+  "orderId": null,
+  "packageName": null,
+  "purchaseToken": null,
+  "characters": null,
+  "lyrics": null,
+  "words": null,
 } satisfies ApiAction
 
 console.log(example)

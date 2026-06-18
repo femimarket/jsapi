@@ -1,7 +1,6 @@
 
 # ApplePay
 
-Put default values
 
 ## Properties
 
@@ -9,14 +8,12 @@ Name | Type
 ------------ | -------------
 `credit` | number
 `currency` | string
-`id` | string
 `jws` | string
 `loaded` | boolean
 `price` | number
 `productId` | string
-`status` | [ApplePayStatus](ApplePayStatus.md)
 `transactionId` | string
-`userId` | string
+`type` | string
 
 ## Example
 
@@ -27,14 +24,12 @@ import type { ApplePay } from 'jsapi'
 const example = {
   "credit": null,
   "currency": null,
-  "id": null,
   "jws": null,
   "loaded": null,
   "price": null,
   "productId": null,
-  "status": null,
   "transactionId": null,
-  "userId": null,
+  "type": null,
 } satisfies ApplePay
 
 console.log(example)

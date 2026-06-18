@@ -9,9 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ApplePayStatus } from './ApplePayStatus';
 /**
- * Put default values
+ *
  * @export
  * @interface ApplePay
  */
@@ -28,12 +27,6 @@ export interface ApplePay {
      * @memberof ApplePay
      */
     currency: string;
-    /**
-     * uuid v7
-     * @type {string}
-     * @memberof ApplePay
-     */
-    id: string;
     /**
      *
      * @type {string}
@@ -60,22 +53,23 @@ export interface ApplePay {
     productId: string;
     /**
      *
-     * @type {ApplePayStatus}
-     * @memberof ApplePay
-     */
-    status: ApplePayStatus;
-    /**
-     *
      * @type {string}
      * @memberof ApplePay
      */
     transactionId: string;
     /**
      *
-     * @type {string}
+     * @type {ApplePayTypeEnum}
      * @memberof ApplePay
      */
-    userId: string;
+    type: ApplePayTypeEnum;
+}
+/**
+* @export
+* @enum {string}
+*/
+export declare enum ApplePayTypeEnum {
+    ApplePay = "ApplePay"
 }
 /**
  * Check if a given object implements the ApplePay interface.

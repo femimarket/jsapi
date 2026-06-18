@@ -35,35 +35,17 @@ import {
  */
 export interface LyricSync {
     /**
-     * 
+     * input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
      * @type {string}
      * @memberof LyricSync
      */
     audio: string;
     /**
-     * 
+     * return
      * @type {Array<CharacterAlignment>}
      * @memberof LyricSync
      */
-    characters?: Array<CharacterAlignment>;
-    /**
-     * 
-     * @type {number}
-     * @memberof LyricSync
-     */
-    credit?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof LyricSync
-     */
-    id: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof LyricSync
-     */
-    loss?: number;
+    characters: Array<CharacterAlignment>;
     /**
      * 
      * @type {string}
@@ -72,25 +54,36 @@ export interface LyricSync {
     lyrics: string;
     /**
      * 
-     * @type {string}
+     * @type {LyricSyncTypeEnum}
      * @memberof LyricSync
      */
-    userId?: string;
+    type: LyricSyncTypeEnum;
     /**
-     * 
+     * return
      * @type {Array<WordAlignment>}
      * @memberof LyricSync
      */
-    words?: Array<WordAlignment>;
+    words: Array<WordAlignment>;
 }
+
+/**
+* @export
+* @enum {string}
+*/
+export enum LyricSyncTypeEnum {
+    LyricSync = 'LyricSync'
+}
+
 
 /**
  * Check if a given object implements the LyricSync interface.
  */
 export function instanceOfLyricSync(value: object): value is LyricSync {
     if (!('audio' in value) || value['audio'] === undefined) return false;
-    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('characters' in value) || value['characters'] === undefined) return false;
     if (!('lyrics' in value) || value['lyrics'] === undefined) return false;
+    if (!('type' in value) || value['type'] === undefined) return false;
+    if (!('words' in value) || value['words'] === undefined) return false;
     return true;
 }
 
@@ -105,13 +98,10 @@ export function LyricSyncFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     return {
         
         'audio': json['audio'],
-        'characters': json['characters'] == null ? undefined : ((json['characters'] as Array<any>).map(CharacterAlignmentFromJSON)),
-        'credit': json['credit'] == null ? undefined : json['credit'],
-        'id': json['id'],
-        'loss': json['loss'] == null ? undefined : json['loss'],
+        'characters': ((json['characters'] as Array<any>).map(CharacterAlignmentFromJSON)),
         'lyrics': json['lyrics'],
-        'userId': json['user_id'] == null ? undefined : json['user_id'],
-        'words': json['words'] == null ? undefined : ((json['words'] as Array<any>).map(WordAlignmentFromJSON)),
+        'type': json['type'],
+        'words': ((json['words'] as Array<any>).map(WordAlignmentFromJSON)),
     };
 }
 
@@ -127,13 +117,10 @@ export function LyricSyncToJSONTyped(value?: LyricSync | null, ignoreDiscriminat
     return {
         
         'audio': value['audio'],
-        'characters': value['characters'] == null ? undefined : ((value['characters'] as Array<any>).map(CharacterAlignmentToJSON)),
-        'credit': value['credit'],
-        'id': value['id'],
-        'loss': value['loss'],
+        'characters': ((value['characters'] as Array<any>).map(CharacterAlignmentToJSON)),
         'lyrics': value['lyrics'],
-        'user_id': value['userId'],
-        'words': value['words'] == null ? undefined : ((value['words'] as Array<any>).map(WordAlignmentToJSON)),
+        'type': value['type'],
+        'words': ((value['words'] as Array<any>).map(WordAlignmentToJSON)),
     };
 }
 

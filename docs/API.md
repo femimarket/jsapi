@@ -8,17 +8,8 @@ default values
 Name | Type
 ------------ | -------------
 `action` | [ApiAction](ApiAction.md)
-`audio` | string
-`balance` | number
 `credit` | number
-`file` | string
 `id` | string
-`image` | string
-`messages` | [Array&lt;ApiChatMessage&gt;](ApiChatMessage.md)
-`model` | [ApiAiModel](ApiAiModel.md)
-`pay` | [ApiPay](ApiPay.md)
-`prompt` | string
-`requestId` | string
 `status` | [ApiStatus](ApiStatus.md)
 `userId` | string
 
@@ -30,17 +21,8 @@ import type { API } from 'jsapi'
 // TODO: Update the object below with actual values
 const example = {
   "action": null,
-  "audio": null,
-  "balance": null,
   "credit": null,
-  "file": null,
   "id": null,
-  "image": null,
-  "messages": null,
-  "model": null,
-  "pay": null,
-  "prompt": null,
-  "requestId": null,
   "status": null,
   "userId": null,
 } satisfies API

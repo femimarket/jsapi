@@ -8,11 +8,8 @@ Name | Type
 ------------ | -------------
 `audio` | string
 `characters` | [Array&lt;CharacterAlignment&gt;](CharacterAlignment.md)
-`credit` | number
-`id` | string
-`loss` | number
 `lyrics` | string
-`userId` | string
+`type` | string
 `words` | [Array&lt;WordAlignment&gt;](WordAlignment.md)
 
 ## Example
@@ -24,11 +21,8 @@ import type { LyricSync } from 'jsapi'
 const example = {
   "audio": null,
   "characters": null,
-  "credit": null,
-  "id": null,
-  "loss": null,
   "lyrics": null,
-  "userId": null,
+  "type": null,
   "words": null,
 } satisfies LyricSync
 

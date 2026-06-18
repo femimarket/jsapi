@@ -14,14 +14,26 @@
 import { CharacterAlignmentFromJSON, CharacterAlignmentToJSON, } from './CharacterAlignment';
 import { WordAlignmentFromJSON, WordAlignmentToJSON, } from './WordAlignment';
 /**
+* @export
+* @enum {string}
+*/
+export var LyricSyncTypeEnum;
+(function (LyricSyncTypeEnum) {
+    LyricSyncTypeEnum["LyricSync"] = "LyricSync";
+})(LyricSyncTypeEnum || (LyricSyncTypeEnum = {}));
+/**
  * Check if a given object implements the LyricSync interface.
  */
 export function instanceOfLyricSync(value) {
     if (!('audio' in value) || value['audio'] === undefined)
         return false;
-    if (!('id' in value) || value['id'] === undefined)
+    if (!('characters' in value) || value['characters'] === undefined)
         return false;
     if (!('lyrics' in value) || value['lyrics'] === undefined)
+        return false;
+    if (!('type' in value) || value['type'] === undefined)
+        return false;
+    if (!('words' in value) || value['words'] === undefined)
         return false;
     return true;
 }
@@ -34,13 +46,10 @@ export function LyricSyncFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'audio': json['audio'],
-        'characters': json['characters'] == null ? undefined : (json['characters'].map(CharacterAlignmentFromJSON)),
-        'credit': json['credit'] == null ? undefined : json['credit'],
-        'id': json['id'],
-        'loss': json['loss'] == null ? undefined : json['loss'],
+        'characters': (json['characters'].map(CharacterAlignmentFromJSON)),
         'lyrics': json['lyrics'],
-        'userId': json['user_id'] == null ? undefined : json['user_id'],
-        'words': json['words'] == null ? undefined : (json['words'].map(WordAlignmentFromJSON)),
+        'type': json['type'],
+        'words': (json['words'].map(WordAlignmentFromJSON)),
     };
 }
 export function LyricSyncToJSON(json) {
@@ -52,12 +61,9 @@ export function LyricSyncToJSONTyped(value, ignoreDiscriminator = false) {
     }
     return {
         'audio': value['audio'],
-        'characters': value['characters'] == null ? undefined : (value['characters'].map(CharacterAlignmentToJSON)),
-        'credit': value['credit'],
-        'id': value['id'],
-        'loss': value['loss'],
+        'characters': (value['characters'].map(CharacterAlignmentToJSON)),
         'lyrics': value['lyrics'],
-        'user_id': value['userId'],
-        'words': value['words'] == null ? undefined : (value['words'].map(WordAlignmentToJSON)),
+        'type': value['type'],
+        'words': (value['words'].map(WordAlignmentToJSON)),
     };
 }

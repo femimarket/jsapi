@@ -16,7 +16,7 @@ Next, try it out.
 ```ts
 import {
   Configuration,
-  ApiApi,
+  ApiHandlerApi,
 } from 'jsapi';
 import type { ApiHandlerRequest } from 'jsapi';
 
@@ -26,7 +26,7 @@ async function example() {
     // Configure HTTP bearer authorization: bearer
     accessToken: "YOUR BEARER TOKEN",
   });
-  const api = new ApiApi(config);
+  const api = new ApiHandlerApi(config);
 
   const body = {
     // API
@@ -54,51 +54,30 @@ All URIs are relative to *https://api.earnfemi.com*
 
 | Class | Method | HTTP request | Description
 | ----- | ------ | ------------ | -------------
-*ApiApi* | [**apiHandler**](docs/ApiApi.md#apihandler) | **POST** /api | 
-*ApiApi* | [**mediaGate**](docs/ApiApi.md#mediagate) | **GET** /{file} | Auth + per-GB debit gate in front of the &#x60;_upload&#x60; ServeDir on femi.market.   - not a media file → pass through (static site, app data, 404), free   - media file that isn\&#39;t a real file in &#x60;_upload&#x60; → pass through, free   - media file in &#x60;_upload&#x60; → require Bearer, charge &#x60;size × pricing.gb&#x60;,     record a debit in the astc ledger, then let ServeDir stream the bytes. The gate only authorizes/charges; ServeDir still does the actual file streaming (range requests, mime, etc.).
+*ApiHandlerApi* | [**apiHandler**](docs/ApiHandlerApi.md#apihandler) | **POST** /api | 
 *ApiKeyRouteApi* | [**apiKey**](docs/ApiKeyRouteApi.md#apikey) | **POST** /api_key | 
-*ApplePayRouteApi* | [**applePay**](docs/ApplePayRouteApi.md#applepay) | **POST** /apple_pay | 
-*LyricSyncRouteApi* | [**lyricSync**](docs/LyricSyncRouteApi.md#lyricsync) | **POST** /lyric_sync | 
-*PayRouteApi* | [**pay**](docs/PayRouteApi.md#pay) | **POST** /pay | 
-*ProjectRouteApi* | [**project**](docs/ProjectRouteApi.md#project) | **POST** /project | 
-*RevolutRouteApi* | [**revolut**](docs/RevolutRouteApi.md#revolut) | **POST** /revolut | 
-*SolanaRouteApi* | [**solana**](docs/SolanaRouteApi.md#solana) | **POST** /solana | 
-*SquareRouteApi* | [**square**](docs/SquareRouteApi.md#square) | **POST** /square | 
-*WiseApi* | [**wiseCheck**](docs/WiseApi.md#wisecheck) | **POST** /wise_check | 
-*WiseRouteApi* | [**wise**](docs/WiseRouteApi.md#wise) | **POST** /wise | 
 
 
 ### Models
 
 - [API](docs/API.md)
 - [ApiAction](docs/ApiAction.md)
-- [ApiAiModel](docs/ApiAiModel.md)
 - [ApiChatMessage](docs/ApiChatMessage.md)
 - [ApiChatRole](docs/ApiChatRole.md)
 - [ApiKey](docs/ApiKey.md)
-- [ApiPay](docs/ApiPay.md)
-- [ApiPayProvider](docs/ApiPayProvider.md)
 - [ApiStatus](docs/ApiStatus.md)
 - [ApplePay](docs/ApplePay.md)
-- [ApplePayStatus](docs/ApplePayStatus.md)
-- [AudioLine](docs/AudioLine.md)
 - [CharacterAlignment](docs/CharacterAlignment.md)
-- [Episode](docs/Episode.md)
-- [Faq](docs/Faq.md)
+- [Charge](docs/Charge.md)
+- [ClaudeSonnet46](docs/ClaudeSonnet46.md)
+- [Flux2Pro](docs/Flux2Pro.md)
+- [GooglePay](docs/GooglePay.md)
+- [Ltx23A2V](docs/Ltx23A2V.md)
 - [LyricSync](docs/LyricSync.md)
-- [Pay](docs/Pay.md)
-- [PayProvider](docs/PayProvider.md)
-- [PayStatus](docs/PayStatus.md)
-- [Project](docs/Project.md)
-- [Revolut](docs/Revolut.md)
-- [Scene](docs/Scene.md)
-- [Season](docs/Season.md)
-- [Shot](docs/Shot.md)
-- [Solana](docs/Solana.md)
-- [Square](docs/Square.md)
-- [Status](docs/Status.md)
-- [Wise](docs/Wise.md)
+- [NanoBanana2](docs/NanoBanana2.md)
+- [Stripe](docs/Stripe.md)
 - [WordAlignment](docs/WordAlignment.md)
+- [ZImageTurbo](docs/ZImageTurbo.md)
 
 ### Authorization
 

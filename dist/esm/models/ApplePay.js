@@ -11,7 +11,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ApplePayStatusFromJSON, ApplePayStatusToJSON, } from './ApplePayStatus';
+/**
+* @export
+* @enum {string}
+*/
+export var ApplePayTypeEnum;
+(function (ApplePayTypeEnum) {
+    ApplePayTypeEnum["ApplePay"] = "ApplePay";
+})(ApplePayTypeEnum || (ApplePayTypeEnum = {}));
 /**
  * Check if a given object implements the ApplePay interface.
  */
@@ -19,8 +26,6 @@ export function instanceOfApplePay(value) {
     if (!('credit' in value) || value['credit'] === undefined)
         return false;
     if (!('currency' in value) || value['currency'] === undefined)
-        return false;
-    if (!('id' in value) || value['id'] === undefined)
         return false;
     if (!('jws' in value) || value['jws'] === undefined)
         return false;
@@ -30,11 +35,9 @@ export function instanceOfApplePay(value) {
         return false;
     if (!('productId' in value) || value['productId'] === undefined)
         return false;
-    if (!('status' in value) || value['status'] === undefined)
-        return false;
     if (!('transactionId' in value) || value['transactionId'] === undefined)
         return false;
-    if (!('userId' in value) || value['userId'] === undefined)
+    if (!('type' in value) || value['type'] === undefined)
         return false;
     return true;
 }
@@ -48,14 +51,12 @@ export function ApplePayFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'credit': json['credit'],
         'currency': json['currency'],
-        'id': json['id'],
         'jws': json['jws'],
         'loaded': json['loaded'],
         'price': json['price'],
         'productId': json['product_id'],
-        'status': ApplePayStatusFromJSON(json['status']),
         'transactionId': json['transaction_id'],
-        'userId': json['user_id'],
+        'type': json['type'],
     };
 }
 export function ApplePayToJSON(json) {
@@ -68,13 +69,11 @@ export function ApplePayToJSONTyped(value, ignoreDiscriminator = false) {
     return {
         'credit': value['credit'],
         'currency': value['currency'],
-        'id': value['id'],
         'jws': value['jws'],
         'loaded': value['loaded'],
         'price': value['price'],
         'product_id': value['productId'],
-        'status': ApplePayStatusToJSON(value['status']),
         'transaction_id': value['transactionId'],
-        'user_id': value['userId'],
+        'type': value['type'],
     };
 }

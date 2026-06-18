@@ -9,17 +9,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { ApplePay } from './ApplePay';
+import type { Charge } from './Charge';
+import type { ClaudeSonnet46 } from './ClaudeSonnet46';
+import type { Flux2Pro } from './Flux2Pro';
+import type { GooglePay } from './GooglePay';
+import type { Ltx23A2V } from './Ltx23A2V';
+import type { LyricSync } from './LyricSync';
+import type { NanoBanana2 } from './NanoBanana2';
+import type { Stripe } from './Stripe';
+import type { ZImageTurbo } from './ZImageTurbo';
 /**
+ * @type ApiAction
  *
  * @export
- * @enum {string}
  */
-export declare enum ApiAction {
-    Generate = "Generate",
-    Pay = "Pay"
-}
-export declare function instanceOfApiAction(value: any): boolean;
+export type ApiAction = ApplePay | Charge | ClaudeSonnet46 | Flux2Pro | GooglePay | Ltx23A2V | LyricSync | NanoBanana2 | Stripe | ZImageTurbo;
 export declare function ApiActionFromJSON(json: any): ApiAction;
 export declare function ApiActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiAction;
-export declare function ApiActionToJSON(value?: ApiAction | null): any;
-export declare function ApiActionToJSONTyped(value: any, ignoreDiscriminator: boolean): ApiAction;
+export declare function ApiActionToJSON(json: any): any;
+export declare function ApiActionToJSONTyped(value?: ApiAction | null, ignoreDiscriminator?: boolean): any;

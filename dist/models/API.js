@@ -18,38 +18,17 @@ exports.APIFromJSON = APIFromJSON;
 exports.APIFromJSONTyped = APIFromJSONTyped;
 exports.APIToJSON = APIToJSON;
 exports.APIToJSONTyped = APIToJSONTyped;
-const ApiAiModel_1 = require("./ApiAiModel");
 const ApiAction_1 = require("./ApiAction");
-const ApiPay_1 = require("./ApiPay");
 const ApiStatus_1 = require("./ApiStatus");
-const ApiChatMessage_1 = require("./ApiChatMessage");
 /**
  * Check if a given object implements the API interface.
  */
 function instanceOfAPI(value) {
     if (!('action' in value) || value['action'] === undefined)
         return false;
-    if (!('audio' in value) || value['audio'] === undefined)
-        return false;
-    if (!('balance' in value) || value['balance'] === undefined)
-        return false;
     if (!('credit' in value) || value['credit'] === undefined)
         return false;
-    if (!('file' in value) || value['file'] === undefined)
-        return false;
     if (!('id' in value) || value['id'] === undefined)
-        return false;
-    if (!('image' in value) || value['image'] === undefined)
-        return false;
-    if (!('messages' in value) || value['messages'] === undefined)
-        return false;
-    if (!('model' in value) || value['model'] === undefined)
-        return false;
-    if (!('pay' in value) || value['pay'] === undefined)
-        return false;
-    if (!('prompt' in value) || value['prompt'] === undefined)
-        return false;
-    if (!('requestId' in value) || value['requestId'] === undefined)
         return false;
     if (!('status' in value) || value['status'] === undefined)
         return false;
@@ -66,17 +45,8 @@ function APIFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'action': (0, ApiAction_1.ApiActionFromJSON)(json['action']),
-        'audio': json['audio'],
-        'balance': json['balance'],
         'credit': json['credit'],
-        'file': json['file'],
         'id': json['id'],
-        'image': json['image'],
-        'messages': (json['messages'].map(ApiChatMessage_1.ApiChatMessageFromJSON)),
-        'model': (0, ApiAiModel_1.ApiAiModelFromJSON)(json['model']),
-        'pay': (0, ApiPay_1.ApiPayFromJSON)(json['pay']),
-        'prompt': json['prompt'],
-        'requestId': json['request_id'],
         'status': (0, ApiStatus_1.ApiStatusFromJSON)(json['status']),
         'userId': json['user_id'],
     };
@@ -90,17 +60,8 @@ function APIToJSONTyped(value, ignoreDiscriminator = false) {
     }
     return {
         'action': (0, ApiAction_1.ApiActionToJSON)(value['action']),
-        'audio': value['audio'],
-        'balance': value['balance'],
         'credit': value['credit'],
-        'file': value['file'],
         'id': value['id'],
-        'image': value['image'],
-        'messages': (value['messages'].map(ApiChatMessage_1.ApiChatMessageToJSON)),
-        'model': (0, ApiAiModel_1.ApiAiModelToJSON)(value['model']),
-        'pay': (0, ApiPay_1.ApiPayToJSON)(value['pay']),
-        'prompt': value['prompt'],
-        'request_id': value['requestId'],
         'status': (0, ApiStatus_1.ApiStatusToJSON)(value['status']),
         'user_id': value['userId'],
     };

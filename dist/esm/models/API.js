@@ -11,38 +11,17 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ApiAiModelFromJSON, ApiAiModelToJSON, } from './ApiAiModel';
 import { ApiActionFromJSON, ApiActionToJSON, } from './ApiAction';
-import { ApiPayFromJSON, ApiPayToJSON, } from './ApiPay';
 import { ApiStatusFromJSON, ApiStatusToJSON, } from './ApiStatus';
-import { ApiChatMessageFromJSON, ApiChatMessageToJSON, } from './ApiChatMessage';
 /**
  * Check if a given object implements the API interface.
  */
 export function instanceOfAPI(value) {
     if (!('action' in value) || value['action'] === undefined)
         return false;
-    if (!('audio' in value) || value['audio'] === undefined)
-        return false;
-    if (!('balance' in value) || value['balance'] === undefined)
-        return false;
     if (!('credit' in value) || value['credit'] === undefined)
         return false;
-    if (!('file' in value) || value['file'] === undefined)
-        return false;
     if (!('id' in value) || value['id'] === undefined)
-        return false;
-    if (!('image' in value) || value['image'] === undefined)
-        return false;
-    if (!('messages' in value) || value['messages'] === undefined)
-        return false;
-    if (!('model' in value) || value['model'] === undefined)
-        return false;
-    if (!('pay' in value) || value['pay'] === undefined)
-        return false;
-    if (!('prompt' in value) || value['prompt'] === undefined)
-        return false;
-    if (!('requestId' in value) || value['requestId'] === undefined)
         return false;
     if (!('status' in value) || value['status'] === undefined)
         return false;
@@ -59,17 +38,8 @@ export function APIFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'action': ApiActionFromJSON(json['action']),
-        'audio': json['audio'],
-        'balance': json['balance'],
         'credit': json['credit'],
-        'file': json['file'],
         'id': json['id'],
-        'image': json['image'],
-        'messages': (json['messages'].map(ApiChatMessageFromJSON)),
-        'model': ApiAiModelFromJSON(json['model']),
-        'pay': ApiPayFromJSON(json['pay']),
-        'prompt': json['prompt'],
-        'requestId': json['request_id'],
         'status': ApiStatusFromJSON(json['status']),
         'userId': json['user_id'],
     };
@@ -83,17 +53,8 @@ export function APIToJSONTyped(value, ignoreDiscriminator = false) {
     }
     return {
         'action': ApiActionToJSON(value['action']),
-        'audio': value['audio'],
-        'balance': value['balance'],
         'credit': value['credit'],
-        'file': value['file'],
         'id': value['id'],
-        'image': value['image'],
-        'messages': (value['messages'].map(ApiChatMessageToJSON)),
-        'model': ApiAiModelToJSON(value['model']),
-        'pay': ApiPayToJSON(value['pay']),
-        'prompt': value['prompt'],
-        'request_id': value['requestId'],
         'status': ApiStatusToJSON(value['status']),
         'user_id': value['userId'],
     };

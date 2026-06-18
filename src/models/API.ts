@@ -13,13 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { ApiAiModel } from './ApiAiModel';
-import {
-    ApiAiModelFromJSON,
-    ApiAiModelFromJSONTyped,
-    ApiAiModelToJSON,
-    ApiAiModelToJSONTyped,
-} from './ApiAiModel';
 import type { ApiAction } from './ApiAction';
 import {
     ApiActionFromJSON,
@@ -27,13 +20,6 @@ import {
     ApiActionToJSON,
     ApiActionToJSONTyped,
 } from './ApiAction';
-import type { ApiPay } from './ApiPay';
-import {
-    ApiPayFromJSON,
-    ApiPayFromJSONTyped,
-    ApiPayToJSON,
-    ApiPayToJSONTyped,
-} from './ApiPay';
 import type { ApiStatus } from './ApiStatus';
 import {
     ApiStatusFromJSON,
@@ -41,13 +27,6 @@ import {
     ApiStatusToJSON,
     ApiStatusToJSONTyped,
 } from './ApiStatus';
-import type { ApiChatMessage } from './ApiChatMessage';
-import {
-    ApiChatMessageFromJSON,
-    ApiChatMessageFromJSONTyped,
-    ApiChatMessageToJSON,
-    ApiChatMessageToJSONTyped,
-} from './ApiChatMessage';
 
 /**
  * default values
@@ -62,71 +41,17 @@ export interface API {
      */
     action: ApiAction;
     /**
-     * input audio as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
-     * @type {string}
-     * @memberof API
-     */
-    audio: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof API
-     */
-    balance: number;
-    /**
-     * 
+     * return only
      * @type {number}
      * @memberof API
      */
     credit: number;
     /**
-     * filename of result to retrieve
-     * @type {string}
-     * @memberof API
-     */
-    file: string;
-    /**
-     * uuid v7
+     * uuid v7 preferred
      * @type {string}
      * @memberof API
      */
     id: string;
-    /**
-     * input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
-     * @type {string}
-     * @memberof API
-     */
-    image: string;
-    /**
-     * default value is non-empty array
-     * @type {Array<ApiChatMessage>}
-     * @memberof API
-     */
-    messages: Array<ApiChatMessage>;
-    /**
-     * 
-     * @type {ApiAiModel}
-     * @memberof API
-     */
-    model: ApiAiModel;
-    /**
-     * 
-     * @type {ApiPay}
-     * @memberof API
-     */
-    pay: ApiPay;
-    /**
-     * 
-     * @type {string}
-     * @memberof API
-     */
-    prompt: string;
-    /**
-     * transient, managed by server
-     * @type {string}
-     * @memberof API
-     */
-    requestId: string;
     /**
      * 
      * @type {ApiStatus}
@@ -148,17 +73,8 @@ export interface API {
  */
 export function instanceOfAPI(value: object): value is API {
     if (!('action' in value) || value['action'] === undefined) return false;
-    if (!('audio' in value) || value['audio'] === undefined) return false;
-    if (!('balance' in value) || value['balance'] === undefined) return false;
     if (!('credit' in value) || value['credit'] === undefined) return false;
-    if (!('file' in value) || value['file'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('image' in value) || value['image'] === undefined) return false;
-    if (!('messages' in value) || value['messages'] === undefined) return false;
-    if (!('model' in value) || value['model'] === undefined) return false;
-    if (!('pay' in value) || value['pay'] === undefined) return false;
-    if (!('prompt' in value) || value['prompt'] === undefined) return false;
-    if (!('requestId' in value) || value['requestId'] === undefined) return false;
     if (!('status' in value) || value['status'] === undefined) return false;
     if (!('userId' in value) || value['userId'] === undefined) return false;
     return true;
@@ -175,17 +91,8 @@ export function APIFromJSONTyped(json: any, ignoreDiscriminator: boolean): API {
     return {
         
         'action': ApiActionFromJSON(json['action']),
-        'audio': json['audio'],
-        'balance': json['balance'],
         'credit': json['credit'],
-        'file': json['file'],
         'id': json['id'],
-        'image': json['image'],
-        'messages': ((json['messages'] as Array<any>).map(ApiChatMessageFromJSON)),
-        'model': ApiAiModelFromJSON(json['model']),
-        'pay': ApiPayFromJSON(json['pay']),
-        'prompt': json['prompt'],
-        'requestId': json['request_id'],
         'status': ApiStatusFromJSON(json['status']),
         'userId': json['user_id'],
     };
@@ -203,17 +110,8 @@ export function APIToJSONTyped(value?: API | null, ignoreDiscriminator: boolean 
     return {
         
         'action': ApiActionToJSON(value['action']),
-        'audio': value['audio'],
-        'balance': value['balance'],
         'credit': value['credit'],
-        'file': value['file'],
         'id': value['id'],
-        'image': value['image'],
-        'messages': ((value['messages'] as Array<any>).map(ApiChatMessageToJSON)),
-        'model': ApiAiModelToJSON(value['model']),
-        'pay': ApiPayToJSON(value['pay']),
-        'prompt': value['prompt'],
-        'request_id': value['requestId'],
         'status': ApiStatusToJSON(value['status']),
         'user_id': value['userId'],
     };

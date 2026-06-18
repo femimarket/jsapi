@@ -13,41 +13,101 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApiAction = void 0;
-exports.instanceOfApiAction = instanceOfApiAction;
 exports.ApiActionFromJSON = ApiActionFromJSON;
 exports.ApiActionFromJSONTyped = ApiActionFromJSONTyped;
 exports.ApiActionToJSON = ApiActionToJSON;
 exports.ApiActionToJSONTyped = ApiActionToJSONTyped;
-/**
- *
- * @export
- * @enum {string}
- */
-var ApiAction;
-(function (ApiAction) {
-    ApiAction["Generate"] = "Generate";
-    ApiAction["Pay"] = "Pay";
-})(ApiAction || (exports.ApiAction = ApiAction = {}));
-function instanceOfApiAction(value) {
-    for (const key in ApiAction) {
-        if (Object.prototype.hasOwnProperty.call(ApiAction, key)) {
-            if (ApiAction[key] === value) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
+const ApplePay_1 = require("./ApplePay");
+const Charge_1 = require("./Charge");
+const ClaudeSonnet46_1 = require("./ClaudeSonnet46");
+const Flux2Pro_1 = require("./Flux2Pro");
+const GooglePay_1 = require("./GooglePay");
+const Ltx23A2V_1 = require("./Ltx23A2V");
+const LyricSync_1 = require("./LyricSync");
+const NanoBanana2_1 = require("./NanoBanana2");
+const Stripe_1 = require("./Stripe");
+const ZImageTurbo_1 = require("./ZImageTurbo");
 function ApiActionFromJSON(json) {
     return ApiActionFromJSONTyped(json, false);
 }
 function ApiActionFromJSONTyped(json, ignoreDiscriminator) {
-    return json;
+    if (json == null) {
+        return json;
+    }
+    if (typeof json !== 'object') {
+        return json;
+    }
+    if ((0, ApplePay_1.instanceOfApplePay)(json)) {
+        return (0, ApplePay_1.ApplePayFromJSONTyped)(json, true);
+    }
+    if ((0, Charge_1.instanceOfCharge)(json)) {
+        return (0, Charge_1.ChargeFromJSONTyped)(json, true);
+    }
+    if ((0, ClaudeSonnet46_1.instanceOfClaudeSonnet46)(json)) {
+        return (0, ClaudeSonnet46_1.ClaudeSonnet46FromJSONTyped)(json, true);
+    }
+    if ((0, Flux2Pro_1.instanceOfFlux2Pro)(json)) {
+        return (0, Flux2Pro_1.Flux2ProFromJSONTyped)(json, true);
+    }
+    if ((0, GooglePay_1.instanceOfGooglePay)(json)) {
+        return (0, GooglePay_1.GooglePayFromJSONTyped)(json, true);
+    }
+    if ((0, Ltx23A2V_1.instanceOfLtx23A2V)(json)) {
+        return (0, Ltx23A2V_1.Ltx23A2VFromJSONTyped)(json, true);
+    }
+    if ((0, LyricSync_1.instanceOfLyricSync)(json)) {
+        return (0, LyricSync_1.LyricSyncFromJSONTyped)(json, true);
+    }
+    if ((0, NanoBanana2_1.instanceOfNanoBanana2)(json)) {
+        return (0, NanoBanana2_1.NanoBanana2FromJSONTyped)(json, true);
+    }
+    if ((0, Stripe_1.instanceOfStripe)(json)) {
+        return (0, Stripe_1.StripeFromJSONTyped)(json, true);
+    }
+    if ((0, ZImageTurbo_1.instanceOfZImageTurbo)(json)) {
+        return (0, ZImageTurbo_1.ZImageTurboFromJSONTyped)(json, true);
+    }
+    return {};
 }
-function ApiActionToJSON(value) {
-    return value;
+function ApiActionToJSON(json) {
+    return ApiActionToJSONTyped(json, false);
 }
-function ApiActionToJSONTyped(value, ignoreDiscriminator) {
-    return value;
+function ApiActionToJSONTyped(value, ignoreDiscriminator = false) {
+    if (value == null) {
+        return value;
+    }
+    if (typeof value !== 'object') {
+        return value;
+    }
+    if ((0, ApplePay_1.instanceOfApplePay)(value)) {
+        return (0, ApplePay_1.ApplePayToJSON)(value);
+    }
+    if ((0, Charge_1.instanceOfCharge)(value)) {
+        return (0, Charge_1.ChargeToJSON)(value);
+    }
+    if ((0, ClaudeSonnet46_1.instanceOfClaudeSonnet46)(value)) {
+        return (0, ClaudeSonnet46_1.ClaudeSonnet46ToJSON)(value);
+    }
+    if ((0, Flux2Pro_1.instanceOfFlux2Pro)(value)) {
+        return (0, Flux2Pro_1.Flux2ProToJSON)(value);
+    }
+    if ((0, GooglePay_1.instanceOfGooglePay)(value)) {
+        return (0, GooglePay_1.GooglePayToJSON)(value);
+    }
+    if ((0, Ltx23A2V_1.instanceOfLtx23A2V)(value)) {
+        return (0, Ltx23A2V_1.Ltx23A2VToJSON)(value);
+    }
+    if ((0, LyricSync_1.instanceOfLyricSync)(value)) {
+        return (0, LyricSync_1.LyricSyncToJSON)(value);
+    }
+    if ((0, NanoBanana2_1.instanceOfNanoBanana2)(value)) {
+        return (0, NanoBanana2_1.NanoBanana2ToJSON)(value);
+    }
+    if ((0, Stripe_1.instanceOfStripe)(value)) {
+        return (0, Stripe_1.StripeToJSON)(value);
+    }
+    if ((0, ZImageTurbo_1.instanceOfZImageTurbo)(value)) {
+        return (0, ZImageTurbo_1.ZImageTurboToJSON)(value);
+    }
+    return {};
 }

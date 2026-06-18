@@ -12,41 +12,169 @@
  * Do not edit the class manually.
  */
 
+import type { ApplePay } from './ApplePay';
+import {
+    instanceOfApplePay,
+    ApplePayFromJSON,
+    ApplePayFromJSONTyped,
+    ApplePayToJSON,
+} from './ApplePay';
+import type { Charge } from './Charge';
+import {
+    instanceOfCharge,
+    ChargeFromJSON,
+    ChargeFromJSONTyped,
+    ChargeToJSON,
+} from './Charge';
+import type { ClaudeSonnet46 } from './ClaudeSonnet46';
+import {
+    instanceOfClaudeSonnet46,
+    ClaudeSonnet46FromJSON,
+    ClaudeSonnet46FromJSONTyped,
+    ClaudeSonnet46ToJSON,
+} from './ClaudeSonnet46';
+import type { Flux2Pro } from './Flux2Pro';
+import {
+    instanceOfFlux2Pro,
+    Flux2ProFromJSON,
+    Flux2ProFromJSONTyped,
+    Flux2ProToJSON,
+} from './Flux2Pro';
+import type { GooglePay } from './GooglePay';
+import {
+    instanceOfGooglePay,
+    GooglePayFromJSON,
+    GooglePayFromJSONTyped,
+    GooglePayToJSON,
+} from './GooglePay';
+import type { Ltx23A2V } from './Ltx23A2V';
+import {
+    instanceOfLtx23A2V,
+    Ltx23A2VFromJSON,
+    Ltx23A2VFromJSONTyped,
+    Ltx23A2VToJSON,
+} from './Ltx23A2V';
+import type { LyricSync } from './LyricSync';
+import {
+    instanceOfLyricSync,
+    LyricSyncFromJSON,
+    LyricSyncFromJSONTyped,
+    LyricSyncToJSON,
+} from './LyricSync';
+import type { NanoBanana2 } from './NanoBanana2';
+import {
+    instanceOfNanoBanana2,
+    NanoBanana2FromJSON,
+    NanoBanana2FromJSONTyped,
+    NanoBanana2ToJSON,
+} from './NanoBanana2';
+import type { Stripe } from './Stripe';
+import {
+    instanceOfStripe,
+    StripeFromJSON,
+    StripeFromJSONTyped,
+    StripeToJSON,
+} from './Stripe';
+import type { ZImageTurbo } from './ZImageTurbo';
+import {
+    instanceOfZImageTurbo,
+    ZImageTurboFromJSON,
+    ZImageTurboFromJSONTyped,
+    ZImageTurboToJSON,
+} from './ZImageTurbo';
+
 /**
+ * @type ApiAction
  * 
  * @export
- * @enum {string}
  */
-export enum ApiAction {
-    Generate = 'Generate',
-    Pay = 'Pay'
-}
-
-
-export function instanceOfApiAction(value: any): boolean {
-    for (const key in ApiAction) {
-        if (Object.prototype.hasOwnProperty.call(ApiAction, key)) {
-            if (ApiAction[key as keyof typeof ApiAction] === value) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
+export type ApiAction = ApplePay | Charge | ClaudeSonnet46 | Flux2Pro | GooglePay | Ltx23A2V | LyricSync | NanoBanana2 | Stripe | ZImageTurbo;
 
 export function ApiActionFromJSON(json: any): ApiAction {
     return ApiActionFromJSONTyped(json, false);
 }
 
 export function ApiActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiAction {
-    return json as ApiAction;
+    if (json == null) {
+        return json;
+    }
+    if (typeof json !== 'object') {
+        return json;
+    }
+    if (instanceOfApplePay(json)) {
+        return ApplePayFromJSONTyped(json, true);
+    }
+    if (instanceOfCharge(json)) {
+        return ChargeFromJSONTyped(json, true);
+    }
+    if (instanceOfClaudeSonnet46(json)) {
+        return ClaudeSonnet46FromJSONTyped(json, true);
+    }
+    if (instanceOfFlux2Pro(json)) {
+        return Flux2ProFromJSONTyped(json, true);
+    }
+    if (instanceOfGooglePay(json)) {
+        return GooglePayFromJSONTyped(json, true);
+    }
+    if (instanceOfLtx23A2V(json)) {
+        return Ltx23A2VFromJSONTyped(json, true);
+    }
+    if (instanceOfLyricSync(json)) {
+        return LyricSyncFromJSONTyped(json, true);
+    }
+    if (instanceOfNanoBanana2(json)) {
+        return NanoBanana2FromJSONTyped(json, true);
+    }
+    if (instanceOfStripe(json)) {
+        return StripeFromJSONTyped(json, true);
+    }
+    if (instanceOfZImageTurbo(json)) {
+        return ZImageTurboFromJSONTyped(json, true);
+    }
+    return {} as any;
 }
 
-export function ApiActionToJSON(value?: ApiAction | null): any {
-    return value as any;
+export function ApiActionToJSON(json: any): any {
+    return ApiActionToJSONTyped(json, false);
 }
 
-export function ApiActionToJSONTyped(value: any, ignoreDiscriminator: boolean): ApiAction {
-    return value as ApiAction;
+export function ApiActionToJSONTyped(value?: ApiAction | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+    if (typeof value !== 'object') {
+        return value;
+    }
+    if (instanceOfApplePay(value)) {
+        return ApplePayToJSON(value as ApplePay);
+    }
+    if (instanceOfCharge(value)) {
+        return ChargeToJSON(value as Charge);
+    }
+    if (instanceOfClaudeSonnet46(value)) {
+        return ClaudeSonnet46ToJSON(value as ClaudeSonnet46);
+    }
+    if (instanceOfFlux2Pro(value)) {
+        return Flux2ProToJSON(value as Flux2Pro);
+    }
+    if (instanceOfGooglePay(value)) {
+        return GooglePayToJSON(value as GooglePay);
+    }
+    if (instanceOfLtx23A2V(value)) {
+        return Ltx23A2VToJSON(value as Ltx23A2V);
+    }
+    if (instanceOfLyricSync(value)) {
+        return LyricSyncToJSON(value as LyricSync);
+    }
+    if (instanceOfNanoBanana2(value)) {
+        return NanoBanana2ToJSON(value as NanoBanana2);
+    }
+    if (instanceOfStripe(value)) {
+        return StripeToJSON(value as Stripe);
+    }
+    if (instanceOfZImageTurbo(value)) {
+        return ZImageTurboToJSON(value as ZImageTurbo);
+    }
+    return {};
 }
 

@@ -11,35 +11,97 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-/**
- *
- * @export
- * @enum {string}
- */
-export var ApiAction;
-(function (ApiAction) {
-    ApiAction["Generate"] = "Generate";
-    ApiAction["Pay"] = "Pay";
-})(ApiAction || (ApiAction = {}));
-export function instanceOfApiAction(value) {
-    for (const key in ApiAction) {
-        if (Object.prototype.hasOwnProperty.call(ApiAction, key)) {
-            if (ApiAction[key] === value) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
+import { instanceOfApplePay, ApplePayFromJSONTyped, ApplePayToJSON, } from './ApplePay';
+import { instanceOfCharge, ChargeFromJSONTyped, ChargeToJSON, } from './Charge';
+import { instanceOfClaudeSonnet46, ClaudeSonnet46FromJSONTyped, ClaudeSonnet46ToJSON, } from './ClaudeSonnet46';
+import { instanceOfFlux2Pro, Flux2ProFromJSONTyped, Flux2ProToJSON, } from './Flux2Pro';
+import { instanceOfGooglePay, GooglePayFromJSONTyped, GooglePayToJSON, } from './GooglePay';
+import { instanceOfLtx23A2V, Ltx23A2VFromJSONTyped, Ltx23A2VToJSON, } from './Ltx23A2V';
+import { instanceOfLyricSync, LyricSyncFromJSONTyped, LyricSyncToJSON, } from './LyricSync';
+import { instanceOfNanoBanana2, NanoBanana2FromJSONTyped, NanoBanana2ToJSON, } from './NanoBanana2';
+import { instanceOfStripe, StripeFromJSONTyped, StripeToJSON, } from './Stripe';
+import { instanceOfZImageTurbo, ZImageTurboFromJSONTyped, ZImageTurboToJSON, } from './ZImageTurbo';
 export function ApiActionFromJSON(json) {
     return ApiActionFromJSONTyped(json, false);
 }
 export function ApiActionFromJSONTyped(json, ignoreDiscriminator) {
-    return json;
+    if (json == null) {
+        return json;
+    }
+    if (typeof json !== 'object') {
+        return json;
+    }
+    if (instanceOfApplePay(json)) {
+        return ApplePayFromJSONTyped(json, true);
+    }
+    if (instanceOfCharge(json)) {
+        return ChargeFromJSONTyped(json, true);
+    }
+    if (instanceOfClaudeSonnet46(json)) {
+        return ClaudeSonnet46FromJSONTyped(json, true);
+    }
+    if (instanceOfFlux2Pro(json)) {
+        return Flux2ProFromJSONTyped(json, true);
+    }
+    if (instanceOfGooglePay(json)) {
+        return GooglePayFromJSONTyped(json, true);
+    }
+    if (instanceOfLtx23A2V(json)) {
+        return Ltx23A2VFromJSONTyped(json, true);
+    }
+    if (instanceOfLyricSync(json)) {
+        return LyricSyncFromJSONTyped(json, true);
+    }
+    if (instanceOfNanoBanana2(json)) {
+        return NanoBanana2FromJSONTyped(json, true);
+    }
+    if (instanceOfStripe(json)) {
+        return StripeFromJSONTyped(json, true);
+    }
+    if (instanceOfZImageTurbo(json)) {
+        return ZImageTurboFromJSONTyped(json, true);
+    }
+    return {};
 }
-export function ApiActionToJSON(value) {
-    return value;
+export function ApiActionToJSON(json) {
+    return ApiActionToJSONTyped(json, false);
 }
-export function ApiActionToJSONTyped(value, ignoreDiscriminator) {
-    return value;
+export function ApiActionToJSONTyped(value, ignoreDiscriminator = false) {
+    if (value == null) {
+        return value;
+    }
+    if (typeof value !== 'object') {
+        return value;
+    }
+    if (instanceOfApplePay(value)) {
+        return ApplePayToJSON(value);
+    }
+    if (instanceOfCharge(value)) {
+        return ChargeToJSON(value);
+    }
+    if (instanceOfClaudeSonnet46(value)) {
+        return ClaudeSonnet46ToJSON(value);
+    }
+    if (instanceOfFlux2Pro(value)) {
+        return Flux2ProToJSON(value);
+    }
+    if (instanceOfGooglePay(value)) {
+        return GooglePayToJSON(value);
+    }
+    if (instanceOfLtx23A2V(value)) {
+        return Ltx23A2VToJSON(value);
+    }
+    if (instanceOfLyricSync(value)) {
+        return LyricSyncToJSON(value);
+    }
+    if (instanceOfNanoBanana2(value)) {
+        return NanoBanana2ToJSON(value);
+    }
+    if (instanceOfStripe(value)) {
+        return StripeToJSON(value);
+    }
+    if (instanceOfZImageTurbo(value)) {
+        return ZImageTurboToJSON(value);
+    }
+    return {};
 }

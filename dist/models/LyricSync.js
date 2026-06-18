@@ -13,6 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LyricSyncTypeEnum = void 0;
 exports.instanceOfLyricSync = instanceOfLyricSync;
 exports.LyricSyncFromJSON = LyricSyncFromJSON;
 exports.LyricSyncFromJSONTyped = LyricSyncFromJSONTyped;
@@ -21,14 +22,26 @@ exports.LyricSyncToJSONTyped = LyricSyncToJSONTyped;
 const CharacterAlignment_1 = require("./CharacterAlignment");
 const WordAlignment_1 = require("./WordAlignment");
 /**
+* @export
+* @enum {string}
+*/
+var LyricSyncTypeEnum;
+(function (LyricSyncTypeEnum) {
+    LyricSyncTypeEnum["LyricSync"] = "LyricSync";
+})(LyricSyncTypeEnum || (exports.LyricSyncTypeEnum = LyricSyncTypeEnum = {}));
+/**
  * Check if a given object implements the LyricSync interface.
  */
 function instanceOfLyricSync(value) {
     if (!('audio' in value) || value['audio'] === undefined)
         return false;
-    if (!('id' in value) || value['id'] === undefined)
+    if (!('characters' in value) || value['characters'] === undefined)
         return false;
     if (!('lyrics' in value) || value['lyrics'] === undefined)
+        return false;
+    if (!('type' in value) || value['type'] === undefined)
+        return false;
+    if (!('words' in value) || value['words'] === undefined)
         return false;
     return true;
 }
@@ -41,13 +54,10 @@ function LyricSyncFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'audio': json['audio'],
-        'characters': json['characters'] == null ? undefined : (json['characters'].map(CharacterAlignment_1.CharacterAlignmentFromJSON)),
-        'credit': json['credit'] == null ? undefined : json['credit'],
-        'id': json['id'],
-        'loss': json['loss'] == null ? undefined : json['loss'],
+        'characters': (json['characters'].map(CharacterAlignment_1.CharacterAlignmentFromJSON)),
         'lyrics': json['lyrics'],
-        'userId': json['user_id'] == null ? undefined : json['user_id'],
-        'words': json['words'] == null ? undefined : (json['words'].map(WordAlignment_1.WordAlignmentFromJSON)),
+        'type': json['type'],
+        'words': (json['words'].map(WordAlignment_1.WordAlignmentFromJSON)),
     };
 }
 function LyricSyncToJSON(json) {
@@ -59,12 +69,9 @@ function LyricSyncToJSONTyped(value, ignoreDiscriminator = false) {
     }
     return {
         'audio': value['audio'],
-        'characters': value['characters'] == null ? undefined : (value['characters'].map(CharacterAlignment_1.CharacterAlignmentToJSON)),
-        'credit': value['credit'],
-        'id': value['id'],
-        'loss': value['loss'],
+        'characters': (value['characters'].map(CharacterAlignment_1.CharacterAlignmentToJSON)),
         'lyrics': value['lyrics'],
-        'user_id': value['userId'],
-        'words': value['words'] == null ? undefined : (value['words'].map(WordAlignment_1.WordAlignmentToJSON)),
+        'type': value['type'],
+        'words': (value['words'].map(WordAlignment_1.WordAlignmentToJSON)),
     };
 }

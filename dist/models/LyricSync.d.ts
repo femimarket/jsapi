@@ -18,35 +18,17 @@ import type { WordAlignment } from './WordAlignment';
  */
 export interface LyricSync {
     /**
-     *
+     * input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
      * @type {string}
      * @memberof LyricSync
      */
     audio: string;
     /**
-     *
+     * return
      * @type {Array<CharacterAlignment>}
      * @memberof LyricSync
      */
-    characters?: Array<CharacterAlignment>;
-    /**
-     *
-     * @type {number}
-     * @memberof LyricSync
-     */
-    credit?: number;
-    /**
-     *
-     * @type {string}
-     * @memberof LyricSync
-     */
-    id: string;
-    /**
-     *
-     * @type {number}
-     * @memberof LyricSync
-     */
-    loss?: number;
+    characters: Array<CharacterAlignment>;
     /**
      *
      * @type {string}
@@ -55,16 +37,23 @@ export interface LyricSync {
     lyrics: string;
     /**
      *
-     * @type {string}
+     * @type {LyricSyncTypeEnum}
      * @memberof LyricSync
      */
-    userId?: string;
+    type: LyricSyncTypeEnum;
     /**
-     *
+     * return
      * @type {Array<WordAlignment>}
      * @memberof LyricSync
      */
-    words?: Array<WordAlignment>;
+    words: Array<WordAlignment>;
+}
+/**
+* @export
+* @enum {string}
+*/
+export declare enum LyricSyncTypeEnum {
+    LyricSync = "LyricSync"
 }
 /**
  * Check if a given object implements the LyricSync interface.
