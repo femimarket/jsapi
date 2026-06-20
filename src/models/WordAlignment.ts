@@ -45,6 +45,7 @@ export interface WordAlignment {
     text: string;
 }
 
+
 /**
  * Check if a given object implements the WordAlignment interface.
  */

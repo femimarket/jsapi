@@ -38,16 +38,10 @@ export interface ClaudeSonnet46 {
      * @type {ClaudeSonnet46TypeEnum}
      * @memberof ClaudeSonnet46
      */
-    type: ClaudeSonnet46TypeEnum;
+    type: 'ClaudeSonnet4_6';
 }
 
-/**
-* @export
-* @enum {string}
-*/
-export enum ClaudeSonnet46TypeEnum {
-    ClaudeSonnet46 = 'ClaudeSonnet4_6'
-}
+
 
 
 /**

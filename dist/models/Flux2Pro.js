@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Flux2ProTypeEnum = void 0;
 exports.instanceOfFlux2Pro = instanceOfFlux2Pro;
 exports.Flux2ProFromJSON = Flux2ProFromJSON;
 exports.Flux2ProFromJSONTyped = Flux2ProFromJSONTyped;
 exports.Flux2ProToJSON = Flux2ProToJSON;
 exports.Flux2ProToJSONTyped = Flux2ProToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var Flux2ProTypeEnum;
-(function (Flux2ProTypeEnum) {
-    Flux2ProTypeEnum["Flux2Pro"] = "Flux2Pro";
-})(Flux2ProTypeEnum || (exports.Flux2ProTypeEnum = Flux2ProTypeEnum = {}));
 /**
  * Check if a given object implements the Flux2Pro interface.
  */

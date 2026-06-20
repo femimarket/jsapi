@@ -26,14 +26,7 @@ export interface Charge {
      * @type {ChargeTypeEnum}
      * @memberof Charge
      */
-    type: ChargeTypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum ChargeTypeEnum {
-    Charge = "Charge"
+    type: 'Charge';
 }
 /**
  * Check if a given object implements the Charge interface.

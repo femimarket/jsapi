@@ -12,14 +12,6 @@
  * Do not edit the class manually.
  */
 /**
-* @export
-* @enum {string}
-*/
-export var NanoBanana2TypeEnum;
-(function (NanoBanana2TypeEnum) {
-    NanoBanana2TypeEnum["NanoBanana2"] = "NanoBanana2";
-})(NanoBanana2TypeEnum || (NanoBanana2TypeEnum = {}));
-/**
  * Check if a given object implements the NanoBanana2 interface.
  */
 export function instanceOfNanoBanana2(value) {

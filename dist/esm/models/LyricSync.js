@@ -14,14 +14,6 @@
 import { CharacterAlignmentFromJSON, CharacterAlignmentToJSON, } from './CharacterAlignment';
 import { WordAlignmentFromJSON, WordAlignmentToJSON, } from './WordAlignment';
 /**
-* @export
-* @enum {string}
-*/
-export var LyricSyncTypeEnum;
-(function (LyricSyncTypeEnum) {
-    LyricSyncTypeEnum["LyricSync"] = "LyricSync";
-})(LyricSyncTypeEnum || (LyricSyncTypeEnum = {}));
-/**
  * Check if a given object implements the LyricSync interface.
  */
 export function instanceOfLyricSync(value) {

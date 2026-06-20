@@ -42,16 +42,10 @@ export interface NanoBanana2 {
      * @type {NanoBanana2TypeEnum}
      * @memberof NanoBanana2
      */
-    type: NanoBanana2TypeEnum;
+    type: 'NanoBanana2';
 }
 
-/**
-* @export
-* @enum {string}
-*/
-export enum NanoBanana2TypeEnum {
-    NanoBanana2 = 'NanoBanana2'
-}
+
 
 
 /**

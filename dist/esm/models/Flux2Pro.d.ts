@@ -38,14 +38,7 @@ export interface Flux2Pro {
      * @type {Flux2ProTypeEnum}
      * @memberof Flux2Pro
      */
-    type: Flux2ProTypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum Flux2ProTypeEnum {
-    Flux2Pro = "Flux2Pro"
+    type: 'Flux2Pro';
 }
 /**
  * Check if a given object implements the Flux2Pro interface.

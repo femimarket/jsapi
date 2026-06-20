@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StripeTypeEnum = void 0;
 exports.instanceOfStripe = instanceOfStripe;
 exports.StripeFromJSON = StripeFromJSON;
 exports.StripeFromJSONTyped = StripeFromJSONTyped;
 exports.StripeToJSON = StripeToJSON;
 exports.StripeToJSONTyped = StripeToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var StripeTypeEnum;
-(function (StripeTypeEnum) {
-    StripeTypeEnum["Stripe"] = "Stripe";
-})(StripeTypeEnum || (exports.StripeTypeEnum = StripeTypeEnum = {}));
 /**
  * Check if a given object implements the Stripe interface.
  */

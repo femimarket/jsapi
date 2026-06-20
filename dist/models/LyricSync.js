@@ -13,7 +13,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LyricSyncTypeEnum = void 0;
 exports.instanceOfLyricSync = instanceOfLyricSync;
 exports.LyricSyncFromJSON = LyricSyncFromJSON;
 exports.LyricSyncFromJSONTyped = LyricSyncFromJSONTyped;
@@ -21,14 +20,6 @@ exports.LyricSyncToJSON = LyricSyncToJSON;
 exports.LyricSyncToJSONTyped = LyricSyncToJSONTyped;
 const CharacterAlignment_1 = require("./CharacterAlignment");
 const WordAlignment_1 = require("./WordAlignment");
-/**
-* @export
-* @enum {string}
-*/
-var LyricSyncTypeEnum;
-(function (LyricSyncTypeEnum) {
-    LyricSyncTypeEnum["LyricSync"] = "LyricSync";
-})(LyricSyncTypeEnum || (exports.LyricSyncTypeEnum = LyricSyncTypeEnum = {}));
 /**
  * Check if a given object implements the LyricSync interface.
  */

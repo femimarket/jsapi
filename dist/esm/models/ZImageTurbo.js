@@ -12,14 +12,6 @@
  * Do not edit the class manually.
  */
 /**
-* @export
-* @enum {string}
-*/
-export var ZImageTurboTypeEnum;
-(function (ZImageTurboTypeEnum) {
-    ZImageTurboTypeEnum["ZImageTurbo"] = "ZImageTurbo";
-})(ZImageTurboTypeEnum || (ZImageTurboTypeEnum = {}));
-/**
  * Check if a given object implements the ZImageTurbo interface.
  */
 export function instanceOfZImageTurbo(value) {

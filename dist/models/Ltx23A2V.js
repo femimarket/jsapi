@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Ltx23A2VTypeEnum = void 0;
 exports.instanceOfLtx23A2V = instanceOfLtx23A2V;
 exports.Ltx23A2VFromJSON = Ltx23A2VFromJSON;
 exports.Ltx23A2VFromJSONTyped = Ltx23A2VFromJSONTyped;
 exports.Ltx23A2VToJSON = Ltx23A2VToJSON;
 exports.Ltx23A2VToJSONTyped = Ltx23A2VToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var Ltx23A2VTypeEnum;
-(function (Ltx23A2VTypeEnum) {
-    Ltx23A2VTypeEnum["Ltx23A2V"] = "Ltx2_3A2V";
-})(Ltx23A2VTypeEnum || (exports.Ltx23A2VTypeEnum = Ltx23A2VTypeEnum = {}));
 /**
  * Check if a given object implements the Ltx23A2V interface.
  */

@@ -38,14 +38,7 @@ export interface NanoBanana2 {
      * @type {NanoBanana2TypeEnum}
      * @memberof NanoBanana2
      */
-    type: NanoBanana2TypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum NanoBanana2TypeEnum {
-    NanoBanana2 = "NanoBanana2"
+    type: 'NanoBanana2';
 }
 /**
  * Check if a given object implements the NanoBanana2 interface.

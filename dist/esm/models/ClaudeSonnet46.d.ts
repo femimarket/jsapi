@@ -27,14 +27,7 @@ export interface ClaudeSonnet46 {
      * @type {ClaudeSonnet46TypeEnum}
      * @memberof ClaudeSonnet46
      */
-    type: ClaudeSonnet46TypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum ClaudeSonnet46TypeEnum {
-    ClaudeSonnet46 = "ClaudeSonnet4_6"
+    type: 'ClaudeSonnet4_6';
 }
 /**
  * Check if a given object implements the ClaudeSonnet46 interface.

@@ -12,14 +12,6 @@
  * Do not edit the class manually.
  */
 /**
-* @export
-* @enum {string}
-*/
-export var Flux2ProTypeEnum;
-(function (Flux2ProTypeEnum) {
-    Flux2ProTypeEnum["Flux2Pro"] = "Flux2Pro";
-})(Flux2ProTypeEnum || (Flux2ProTypeEnum = {}));
-/**
  * Check if a given object implements the Flux2Pro interface.
  */
 export function instanceOfFlux2Pro(value) {

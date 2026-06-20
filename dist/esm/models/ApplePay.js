@@ -12,14 +12,6 @@
  * Do not edit the class manually.
  */
 /**
-* @export
-* @enum {string}
-*/
-export var ApplePayTypeEnum;
-(function (ApplePayTypeEnum) {
-    ApplePayTypeEnum["ApplePay"] = "ApplePay";
-})(ApplePayTypeEnum || (ApplePayTypeEnum = {}));
-/**
  * Check if a given object implements the ApplePay interface.
  */
 export function instanceOfApplePay(value) {

@@ -13,14 +13,6 @@
  */
 import { ApiChatMessageFromJSON, ApiChatMessageToJSON, } from './ApiChatMessage';
 /**
-* @export
-* @enum {string}
-*/
-export var ClaudeSonnet46TypeEnum;
-(function (ClaudeSonnet46TypeEnum) {
-    ClaudeSonnet46TypeEnum["ClaudeSonnet46"] = "ClaudeSonnet4_6";
-})(ClaudeSonnet46TypeEnum || (ClaudeSonnet46TypeEnum = {}));
-/**
  * Check if a given object implements the ClaudeSonnet46 interface.
  */
 export function instanceOfClaudeSonnet46(value) {

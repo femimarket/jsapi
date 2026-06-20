@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NanoBanana2TypeEnum = void 0;
 exports.instanceOfNanoBanana2 = instanceOfNanoBanana2;
 exports.NanoBanana2FromJSON = NanoBanana2FromJSON;
 exports.NanoBanana2FromJSONTyped = NanoBanana2FromJSONTyped;
 exports.NanoBanana2ToJSON = NanoBanana2ToJSON;
 exports.NanoBanana2ToJSONTyped = NanoBanana2ToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var NanoBanana2TypeEnum;
-(function (NanoBanana2TypeEnum) {
-    NanoBanana2TypeEnum["NanoBanana2"] = "NanoBanana2";
-})(NanoBanana2TypeEnum || (exports.NanoBanana2TypeEnum = NanoBanana2TypeEnum = {}));
 /**
  * Check if a given object implements the NanoBanana2 interface.
  */

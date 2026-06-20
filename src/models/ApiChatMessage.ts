@@ -43,6 +43,7 @@ export interface ApiChatMessage {
 
 
 
+
 /**
  * Check if a given object implements the ApiChatMessage interface.
  */

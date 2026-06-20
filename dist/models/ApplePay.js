@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApplePayTypeEnum = void 0;
 exports.instanceOfApplePay = instanceOfApplePay;
 exports.ApplePayFromJSON = ApplePayFromJSON;
 exports.ApplePayFromJSONTyped = ApplePayFromJSONTyped;
 exports.ApplePayToJSON = ApplePayToJSON;
 exports.ApplePayToJSONTyped = ApplePayToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var ApplePayTypeEnum;
-(function (ApplePayTypeEnum) {
-    ApplePayTypeEnum["ApplePay"] = "ApplePay";
-})(ApplePayTypeEnum || (exports.ApplePayTypeEnum = ApplePayTypeEnum = {}));
 /**
  * Check if a given object implements the ApplePay interface.
  */

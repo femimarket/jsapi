@@ -12,14 +12,6 @@
  * Do not edit the class manually.
  */
 /**
-* @export
-* @enum {string}
-*/
-export var StripeTypeEnum;
-(function (StripeTypeEnum) {
-    StripeTypeEnum["Stripe"] = "Stripe";
-})(StripeTypeEnum || (StripeTypeEnum = {}));
-/**
  * Check if a given object implements the Stripe interface.
  */
 export function instanceOfStripe(value) {

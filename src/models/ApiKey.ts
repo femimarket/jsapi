@@ -39,6 +39,7 @@ export interface ApiKey {
     userId: string;
 }
 
+
 /**
  * Check if a given object implements the ApiKey interface.
  */

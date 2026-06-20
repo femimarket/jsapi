@@ -50,14 +50,7 @@ export interface Ltx23A2V {
      * @type {Ltx23A2VTypeEnum}
      * @memberof Ltx23A2V
      */
-    type: Ltx23A2VTypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum Ltx23A2VTypeEnum {
-    Ltx23A2V = "Ltx2_3A2V"
+    type: 'Ltx2_3A2V';
 }
 /**
  * Check if a given object implements the Ltx23A2V interface.

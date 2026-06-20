@@ -39,6 +39,7 @@ export interface CharacterAlignment {
     text: string;
 }
 
+
 /**
  * Check if a given object implements the CharacterAlignment interface.
  */

@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ZImageTurboTypeEnum = void 0;
 exports.instanceOfZImageTurbo = instanceOfZImageTurbo;
 exports.ZImageTurboFromJSON = ZImageTurboFromJSON;
 exports.ZImageTurboFromJSONTyped = ZImageTurboFromJSONTyped;
 exports.ZImageTurboToJSON = ZImageTurboToJSON;
 exports.ZImageTurboToJSONTyped = ZImageTurboToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var ZImageTurboTypeEnum;
-(function (ZImageTurboTypeEnum) {
-    ZImageTurboTypeEnum["ZImageTurbo"] = "ZImageTurbo";
-})(ZImageTurboTypeEnum || (exports.ZImageTurboTypeEnum = ZImageTurboTypeEnum = {}));
 /**
  * Check if a given object implements the ZImageTurbo interface.
  */

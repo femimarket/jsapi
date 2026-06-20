@@ -68,6 +68,7 @@ export interface API {
 
 
 
+
 /**
  * Check if a given object implements the API interface.
  */

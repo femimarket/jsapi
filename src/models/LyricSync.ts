@@ -57,7 +57,7 @@ export interface LyricSync {
      * @type {LyricSyncTypeEnum}
      * @memberof LyricSync
      */
-    type: LyricSyncTypeEnum;
+    type: 'LyricSync';
     /**
      * return
      * @type {Array<WordAlignment>}
@@ -66,13 +66,7 @@ export interface LyricSync {
     words: Array<WordAlignment>;
 }
 
-/**
-* @export
-* @enum {string}
-*/
-export enum LyricSyncTypeEnum {
-    LyricSync = 'LyricSync'
-}
+
 
 
 /**

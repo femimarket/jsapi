@@ -13,21 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ClaudeSonnet46TypeEnum = void 0;
 exports.instanceOfClaudeSonnet46 = instanceOfClaudeSonnet46;
 exports.ClaudeSonnet46FromJSON = ClaudeSonnet46FromJSON;
 exports.ClaudeSonnet46FromJSONTyped = ClaudeSonnet46FromJSONTyped;
 exports.ClaudeSonnet46ToJSON = ClaudeSonnet46ToJSON;
 exports.ClaudeSonnet46ToJSONTyped = ClaudeSonnet46ToJSONTyped;
 const ApiChatMessage_1 = require("./ApiChatMessage");
-/**
-* @export
-* @enum {string}
-*/
-var ClaudeSonnet46TypeEnum;
-(function (ClaudeSonnet46TypeEnum) {
-    ClaudeSonnet46TypeEnum["ClaudeSonnet46"] = "ClaudeSonnet4_6";
-})(ClaudeSonnet46TypeEnum || (exports.ClaudeSonnet46TypeEnum = ClaudeSonnet46TypeEnum = {}));
 /**
  * Check if a given object implements the ClaudeSonnet46 interface.
  */

@@ -12,14 +12,6 @@
  * Do not edit the class manually.
  */
 /**
-* @export
-* @enum {string}
-*/
-export var GooglePayTypeEnum;
-(function (GooglePayTypeEnum) {
-    GooglePayTypeEnum["GooglePay"] = "GooglePay";
-})(GooglePayTypeEnum || (GooglePayTypeEnum = {}));
-/**
  * Check if a given object implements the GooglePay interface.
  */
 export function instanceOfGooglePay(value) {

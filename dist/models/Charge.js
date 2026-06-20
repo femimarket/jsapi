@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChargeTypeEnum = void 0;
 exports.instanceOfCharge = instanceOfCharge;
 exports.ChargeFromJSON = ChargeFromJSON;
 exports.ChargeFromJSONTyped = ChargeFromJSONTyped;
 exports.ChargeToJSON = ChargeToJSON;
 exports.ChargeToJSONTyped = ChargeToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var ChargeTypeEnum;
-(function (ChargeTypeEnum) {
-    ChargeTypeEnum["Charge"] = "Charge";
-})(ChargeTypeEnum || (exports.ChargeTypeEnum = ChargeTypeEnum = {}));
 /**
  * Check if a given object implements the Charge interface.
  */

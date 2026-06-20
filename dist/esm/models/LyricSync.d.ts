@@ -40,20 +40,13 @@ export interface LyricSync {
      * @type {LyricSyncTypeEnum}
      * @memberof LyricSync
      */
-    type: LyricSyncTypeEnum;
+    type: 'LyricSync';
     /**
      * return
      * @type {Array<WordAlignment>}
      * @memberof LyricSync
      */
     words: Array<WordAlignment>;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum LyricSyncTypeEnum {
-    LyricSync = "LyricSync"
 }
 /**
  * Check if a given object implements the LyricSync interface.

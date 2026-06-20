@@ -12,14 +12,6 @@
  * Do not edit the class manually.
  */
 /**
-* @export
-* @enum {string}
-*/
-export var Ltx23A2VTypeEnum;
-(function (Ltx23A2VTypeEnum) {
-    Ltx23A2VTypeEnum["Ltx23A2V"] = "Ltx2_3A2V";
-})(Ltx23A2VTypeEnum || (Ltx23A2VTypeEnum = {}));
-/**
  * Check if a given object implements the Ltx23A2V interface.
  */
 export function instanceOfLtx23A2V(value) {

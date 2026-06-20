@@ -60,16 +60,10 @@ export interface Stripe {
      * @type {StripeTypeEnum}
      * @memberof Stripe
      */
-    type: StripeTypeEnum;
+    type: 'Stripe';
 }
 
-/**
-* @export
-* @enum {string}
-*/
-export enum StripeTypeEnum {
-    Stripe = 'Stripe'
-}
+
 
 
 /**

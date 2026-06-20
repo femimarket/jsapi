@@ -62,14 +62,7 @@ export interface ApplePay {
      * @type {ApplePayTypeEnum}
      * @memberof ApplePay
      */
-    type: ApplePayTypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum ApplePayTypeEnum {
-    ApplePay = "ApplePay"
+    type: 'ApplePay';
 }
 /**
  * Check if a given object implements the ApplePay interface.

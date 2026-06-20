@@ -13,20 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GooglePayTypeEnum = void 0;
 exports.instanceOfGooglePay = instanceOfGooglePay;
 exports.GooglePayFromJSON = GooglePayFromJSON;
 exports.GooglePayFromJSONTyped = GooglePayFromJSONTyped;
 exports.GooglePayToJSON = GooglePayToJSON;
 exports.GooglePayToJSONTyped = GooglePayToJSONTyped;
-/**
-* @export
-* @enum {string}
-*/
-var GooglePayTypeEnum;
-(function (GooglePayTypeEnum) {
-    GooglePayTypeEnum["GooglePay"] = "GooglePay";
-})(GooglePayTypeEnum || (exports.GooglePayTypeEnum = GooglePayTypeEnum = {}));
 /**
  * Check if a given object implements the GooglePay interface.
  */

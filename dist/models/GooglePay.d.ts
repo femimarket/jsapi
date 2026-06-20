@@ -56,14 +56,7 @@ export interface GooglePay {
      * @type {GooglePayTypeEnum}
      * @memberof GooglePay
      */
-    type: GooglePayTypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum GooglePayTypeEnum {
-    GooglePay = "GooglePay"
+    type: 'GooglePay';
 }
 /**
  * Check if a given object implements the GooglePay interface.

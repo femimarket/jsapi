@@ -30,16 +30,10 @@ export interface Charge {
      * @type {ChargeTypeEnum}
      * @memberof Charge
      */
-    type: ChargeTypeEnum;
+    type: 'Charge';
 }
 
-/**
-* @export
-* @enum {string}
-*/
-export enum ChargeTypeEnum {
-    Charge = 'Charge'
-}
+
 
 
 /**

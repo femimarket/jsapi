@@ -56,14 +56,7 @@ export interface Stripe {
      * @type {StripeTypeEnum}
      * @memberof Stripe
      */
-    type: StripeTypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum StripeTypeEnum {
-    Stripe = "Stripe"
+    type: 'Stripe';
 }
 /**
  * Check if a given object implements the Stripe interface.

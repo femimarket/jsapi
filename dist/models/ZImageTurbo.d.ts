@@ -38,14 +38,7 @@ export interface ZImageTurbo {
      * @type {ZImageTurboTypeEnum}
      * @memberof ZImageTurbo
      */
-    type: ZImageTurboTypeEnum;
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum ZImageTurboTypeEnum {
-    ZImageTurbo = "ZImageTurbo"
+    type: 'ZImageTurbo';
 }
 /**
  * Check if a given object implements the ZImageTurbo interface.

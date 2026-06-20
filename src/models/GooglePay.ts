@@ -60,16 +60,10 @@ export interface GooglePay {
      * @type {GooglePayTypeEnum}
      * @memberof GooglePay
      */
-    type: GooglePayTypeEnum;
+    type: 'GooglePay';
 }
 
-/**
-* @export
-* @enum {string}
-*/
-export enum GooglePayTypeEnum {
-    GooglePay = 'GooglePay'
-}
+
 
 
 /**
