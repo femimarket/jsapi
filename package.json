@@ -1,28 +1,28 @@
 {
-  "name": "jsapi",
-  "version": "4.3.0",
-  "description": "OpenAPI client for jsapi",
   "author": "OpenAPI-Generator",
+  "description": "OpenAPI client for jsapi",
+  "devDependencies": {
+    "typescript": "^4.0 || ^5.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "name": "jsapi",
   "repository": {
     "type": "git",
     "url": "https://github.com/femimarket/jsapi.git"
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "module": "./dist/esm/index.js",
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/index.js"
-    }
   },
   "scripts": {
     "build": "tsc && tsc -p tsconfig.esm.json",
     "prepare": "npm run build"
   },
-  "devDependencies": {
-    "typescript": "^4.0 || ^5.0"
-  }
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "version": "4.3.1"
 }
