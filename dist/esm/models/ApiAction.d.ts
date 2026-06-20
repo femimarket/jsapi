@@ -24,7 +24,27 @@ import type { ZImageTurbo } from './ZImageTurbo';
  *
  * @export
  */
-export type ApiAction = ApplePay | Charge | ClaudeSonnet46 | Flux2Pro | GooglePay | Ltx23A2V | LyricSync | NanoBanana2 | Stripe | ZImageTurbo;
+export type ApiAction = {
+    type: 'ApplePay';
+} & ApplePay | {
+    type: 'Charge';
+} & Charge | {
+    type: 'ClaudeSonnet4_6';
+} & ClaudeSonnet46 | {
+    type: 'Flux2Pro';
+} & Flux2Pro | {
+    type: 'GooglePay';
+} & GooglePay | {
+    type: 'Ltx2_3A2V';
+} & Ltx23A2V | {
+    type: 'LyricSync';
+} & LyricSync | {
+    type: 'NanoBanana2';
+} & NanoBanana2 | {
+    type: 'Stripe';
+} & Stripe | {
+    type: 'ZImageTurbo';
+} & ZImageTurbo;
 export declare function ApiActionFromJSON(json: any): ApiAction;
 export declare function ApiActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiAction;
 export declare function ApiActionToJSON(json: any): any;

@@ -34,40 +34,30 @@ function ApiActionFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
-    if (typeof json !== 'object') {
-        return json;
+    switch (json['type']) {
+        case 'ApplePay':
+            return Object.assign({}, (0, ApplePay_1.ApplePayFromJSONTyped)(json, true), { type: 'ApplePay' });
+        case 'Charge':
+            return Object.assign({}, (0, Charge_1.ChargeFromJSONTyped)(json, true), { type: 'Charge' });
+        case 'ClaudeSonnet4_6':
+            return Object.assign({}, (0, ClaudeSonnet46_1.ClaudeSonnet46FromJSONTyped)(json, true), { type: 'ClaudeSonnet4_6' });
+        case 'Flux2Pro':
+            return Object.assign({}, (0, Flux2Pro_1.Flux2ProFromJSONTyped)(json, true), { type: 'Flux2Pro' });
+        case 'GooglePay':
+            return Object.assign({}, (0, GooglePay_1.GooglePayFromJSONTyped)(json, true), { type: 'GooglePay' });
+        case 'Ltx2_3A2V':
+            return Object.assign({}, (0, Ltx23A2V_1.Ltx23A2VFromJSONTyped)(json, true), { type: 'Ltx2_3A2V' });
+        case 'LyricSync':
+            return Object.assign({}, (0, LyricSync_1.LyricSyncFromJSONTyped)(json, true), { type: 'LyricSync' });
+        case 'NanoBanana2':
+            return Object.assign({}, (0, NanoBanana2_1.NanoBanana2FromJSONTyped)(json, true), { type: 'NanoBanana2' });
+        case 'Stripe':
+            return Object.assign({}, (0, Stripe_1.StripeFromJSONTyped)(json, true), { type: 'Stripe' });
+        case 'ZImageTurbo':
+            return Object.assign({}, (0, ZImageTurbo_1.ZImageTurboFromJSONTyped)(json, true), { type: 'ZImageTurbo' });
+        default:
+            return json;
     }
-    if ((0, ApplePay_1.instanceOfApplePay)(json)) {
-        return (0, ApplePay_1.ApplePayFromJSONTyped)(json, true);
-    }
-    if ((0, Charge_1.instanceOfCharge)(json)) {
-        return (0, Charge_1.ChargeFromJSONTyped)(json, true);
-    }
-    if ((0, ClaudeSonnet46_1.instanceOfClaudeSonnet46)(json)) {
-        return (0, ClaudeSonnet46_1.ClaudeSonnet46FromJSONTyped)(json, true);
-    }
-    if ((0, Flux2Pro_1.instanceOfFlux2Pro)(json)) {
-        return (0, Flux2Pro_1.Flux2ProFromJSONTyped)(json, true);
-    }
-    if ((0, GooglePay_1.instanceOfGooglePay)(json)) {
-        return (0, GooglePay_1.GooglePayFromJSONTyped)(json, true);
-    }
-    if ((0, Ltx23A2V_1.instanceOfLtx23A2V)(json)) {
-        return (0, Ltx23A2V_1.Ltx23A2VFromJSONTyped)(json, true);
-    }
-    if ((0, LyricSync_1.instanceOfLyricSync)(json)) {
-        return (0, LyricSync_1.LyricSyncFromJSONTyped)(json, true);
-    }
-    if ((0, NanoBanana2_1.instanceOfNanoBanana2)(json)) {
-        return (0, NanoBanana2_1.NanoBanana2FromJSONTyped)(json, true);
-    }
-    if ((0, Stripe_1.instanceOfStripe)(json)) {
-        return (0, Stripe_1.StripeFromJSONTyped)(json, true);
-    }
-    if ((0, ZImageTurbo_1.instanceOfZImageTurbo)(json)) {
-        return (0, ZImageTurbo_1.ZImageTurboFromJSONTyped)(json, true);
-    }
-    return {};
 }
 function ApiActionToJSON(json) {
     return ApiActionToJSONTyped(json, false);
@@ -76,38 +66,28 @@ function ApiActionToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }
-    if (typeof value !== 'object') {
-        return value;
+    switch (value['type']) {
+        case 'ApplePay':
+            return Object.assign({}, (0, ApplePay_1.ApplePayToJSON)(value), { type: 'ApplePay' });
+        case 'Charge':
+            return Object.assign({}, (0, Charge_1.ChargeToJSON)(value), { type: 'Charge' });
+        case 'ClaudeSonnet4_6':
+            return Object.assign({}, (0, ClaudeSonnet46_1.ClaudeSonnet46ToJSON)(value), { type: 'ClaudeSonnet4_6' });
+        case 'Flux2Pro':
+            return Object.assign({}, (0, Flux2Pro_1.Flux2ProToJSON)(value), { type: 'Flux2Pro' });
+        case 'GooglePay':
+            return Object.assign({}, (0, GooglePay_1.GooglePayToJSON)(value), { type: 'GooglePay' });
+        case 'Ltx2_3A2V':
+            return Object.assign({}, (0, Ltx23A2V_1.Ltx23A2VToJSON)(value), { type: 'Ltx2_3A2V' });
+        case 'LyricSync':
+            return Object.assign({}, (0, LyricSync_1.LyricSyncToJSON)(value), { type: 'LyricSync' });
+        case 'NanoBanana2':
+            return Object.assign({}, (0, NanoBanana2_1.NanoBanana2ToJSON)(value), { type: 'NanoBanana2' });
+        case 'Stripe':
+            return Object.assign({}, (0, Stripe_1.StripeToJSON)(value), { type: 'Stripe' });
+        case 'ZImageTurbo':
+            return Object.assign({}, (0, ZImageTurbo_1.ZImageTurboToJSON)(value), { type: 'ZImageTurbo' });
+        default:
+            return value;
     }
-    if ((0, ApplePay_1.instanceOfApplePay)(value)) {
-        return (0, ApplePay_1.ApplePayToJSON)(value);
-    }
-    if ((0, Charge_1.instanceOfCharge)(value)) {
-        return (0, Charge_1.ChargeToJSON)(value);
-    }
-    if ((0, ClaudeSonnet46_1.instanceOfClaudeSonnet46)(value)) {
-        return (0, ClaudeSonnet46_1.ClaudeSonnet46ToJSON)(value);
-    }
-    if ((0, Flux2Pro_1.instanceOfFlux2Pro)(value)) {
-        return (0, Flux2Pro_1.Flux2ProToJSON)(value);
-    }
-    if ((0, GooglePay_1.instanceOfGooglePay)(value)) {
-        return (0, GooglePay_1.GooglePayToJSON)(value);
-    }
-    if ((0, Ltx23A2V_1.instanceOfLtx23A2V)(value)) {
-        return (0, Ltx23A2V_1.Ltx23A2VToJSON)(value);
-    }
-    if ((0, LyricSync_1.instanceOfLyricSync)(value)) {
-        return (0, LyricSync_1.LyricSyncToJSON)(value);
-    }
-    if ((0, NanoBanana2_1.instanceOfNanoBanana2)(value)) {
-        return (0, NanoBanana2_1.NanoBanana2ToJSON)(value);
-    }
-    if ((0, Stripe_1.instanceOfStripe)(value)) {
-        return (0, Stripe_1.StripeToJSON)(value);
-    }
-    if ((0, ZImageTurbo_1.instanceOfZImageTurbo)(value)) {
-        return (0, ZImageTurbo_1.ZImageTurboToJSON)(value);
-    }
-    return {};
 }
