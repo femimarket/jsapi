@@ -26,6 +26,7 @@ __exportStar(require("./ApplePay"), exports);
 __exportStar(require("./CharacterAlignment"), exports);
 __exportStar(require("./Charge"), exports);
 __exportStar(require("./ClaudeSonnet46"), exports);
+__exportStar(require("./Flux2DevI2I"), exports);
 __exportStar(require("./Flux2KleinI2I"), exports);
 __exportStar(require("./Flux2Pro"), exports);
 __exportStar(require("./GooglePay"), exports);

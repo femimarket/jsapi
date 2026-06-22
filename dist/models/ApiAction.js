@@ -20,6 +20,7 @@ exports.ApiActionToJSONTyped = ApiActionToJSONTyped;
 const ApplePay_1 = require("./ApplePay");
 const Charge_1 = require("./Charge");
 const ClaudeSonnet46_1 = require("./ClaudeSonnet46");
+const Flux2DevI2I_1 = require("./Flux2DevI2I");
 const Flux2KleinI2I_1 = require("./Flux2KleinI2I");
 const Flux2Pro_1 = require("./Flux2Pro");
 const GooglePay_1 = require("./GooglePay");
@@ -42,6 +43,8 @@ function ApiActionFromJSONTyped(json, ignoreDiscriminator) {
             return Object.assign({}, (0, Charge_1.ChargeFromJSONTyped)(json, true), { type: 'Charge' });
         case 'ClaudeSonnet4_6':
             return Object.assign({}, (0, ClaudeSonnet46_1.ClaudeSonnet46FromJSONTyped)(json, true), { type: 'ClaudeSonnet4_6' });
+        case 'Flux2DevI2I':
+            return Object.assign({}, (0, Flux2DevI2I_1.Flux2DevI2IFromJSONTyped)(json, true), { type: 'Flux2DevI2I' });
         case 'Flux2KleinI2I':
             return Object.assign({}, (0, Flux2KleinI2I_1.Flux2KleinI2IFromJSONTyped)(json, true), { type: 'Flux2KleinI2I' });
         case 'Flux2Pro':
@@ -76,6 +79,8 @@ function ApiActionToJSONTyped(value, ignoreDiscriminator = false) {
             return Object.assign({}, (0, Charge_1.ChargeToJSON)(value), { type: 'Charge' });
         case 'ClaudeSonnet4_6':
             return Object.assign({}, (0, ClaudeSonnet46_1.ClaudeSonnet46ToJSON)(value), { type: 'ClaudeSonnet4_6' });
+        case 'Flux2DevI2I':
+            return Object.assign({}, (0, Flux2DevI2I_1.Flux2DevI2IToJSON)(value), { type: 'Flux2DevI2I' });
         case 'Flux2KleinI2I':
             return Object.assign({}, (0, Flux2KleinI2I_1.Flux2KleinI2IToJSON)(value), { type: 'Flux2KleinI2I' });
         case 'Flux2Pro':

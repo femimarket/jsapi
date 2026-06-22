@@ -14,6 +14,7 @@ docs/ApplePay.md
 docs/CharacterAlignment.md
 docs/Charge.md
 docs/ClaudeSonnet46.md
+docs/Flux2DevI2I.md
 docs/Flux2KleinI2I.md
 docs/Flux2Pro.md
 docs/GooglePay.md
@@ -38,6 +39,7 @@ src/models/ApplePay.ts
 src/models/CharacterAlignment.ts
 src/models/Charge.ts
 src/models/ClaudeSonnet46.ts
+src/models/Flux2DevI2I.ts
 src/models/Flux2KleinI2I.ts
 src/models/Flux2Pro.ts
 src/models/GooglePay.ts

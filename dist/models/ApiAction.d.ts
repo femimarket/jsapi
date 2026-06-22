@@ -12,6 +12,7 @@
 import type { ApplePay } from './ApplePay';
 import type { Charge } from './Charge';
 import type { ClaudeSonnet46 } from './ClaudeSonnet46';
+import type { Flux2DevI2I } from './Flux2DevI2I';
 import type { Flux2KleinI2I } from './Flux2KleinI2I';
 import type { Flux2Pro } from './Flux2Pro';
 import type { GooglePay } from './GooglePay';
@@ -32,6 +33,8 @@ export type ApiAction = {
 } & Charge | {
     type: 'ClaudeSonnet4_6';
 } & ClaudeSonnet46 | {
+    type: 'Flux2DevI2I';
+} & Flux2DevI2I | {
     type: 'Flux2KleinI2I';
 } & Flux2KleinI2I | {
     type: 'Flux2Pro';

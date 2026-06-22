@@ -8,6 +8,7 @@ export * from './ApplePay';
 export * from './CharacterAlignment';
 export * from './Charge';
 export * from './ClaudeSonnet46';
+export * from './Flux2DevI2I';
 export * from './Flux2KleinI2I';
 export * from './Flux2Pro';
 export * from './GooglePay';
