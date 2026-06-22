@@ -14,6 +14,7 @@ Name | Type
 `audio` | string
 `comfyRequestId` | string
 `image` | string
+`image2` | string
 `messages` | [Array&lt;ApiChatMessage&gt;](ApiChatMessage.md)
 `amountCents` | number
 `credit` | number
@@ -48,6 +49,7 @@ const example = {
   "audio": null,
   "comfyRequestId": null,
   "image": null,
+  "image2": null,
   "messages": null,
   "amountCents": null,
   "credit": null,

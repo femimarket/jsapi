@@ -14,6 +14,7 @@
 import { ApplePayFromJSONTyped, ApplePayToJSON, } from './ApplePay';
 import { ChargeFromJSONTyped, ChargeToJSON, } from './Charge';
 import { ClaudeSonnet46FromJSONTyped, ClaudeSonnet46ToJSON, } from './ClaudeSonnet46';
+import { Flux2KleinI2IFromJSONTyped, Flux2KleinI2IToJSON, } from './Flux2KleinI2I';
 import { Flux2ProFromJSONTyped, Flux2ProToJSON, } from './Flux2Pro';
 import { GooglePayFromJSONTyped, GooglePayToJSON, } from './GooglePay';
 import { Ltx23A2VFromJSONTyped, Ltx23A2VToJSON, } from './Ltx23A2V';
@@ -35,6 +36,8 @@ export function ApiActionFromJSONTyped(json, ignoreDiscriminator) {
             return Object.assign({}, ChargeFromJSONTyped(json, true), { type: 'Charge' });
         case 'ClaudeSonnet4_6':
             return Object.assign({}, ClaudeSonnet46FromJSONTyped(json, true), { type: 'ClaudeSonnet4_6' });
+        case 'Flux2KleinI2I':
+            return Object.assign({}, Flux2KleinI2IFromJSONTyped(json, true), { type: 'Flux2KleinI2I' });
         case 'Flux2Pro':
             return Object.assign({}, Flux2ProFromJSONTyped(json, true), { type: 'Flux2Pro' });
         case 'GooglePay':
@@ -67,6 +70,8 @@ export function ApiActionToJSONTyped(value, ignoreDiscriminator = false) {
             return Object.assign({}, ChargeToJSON(value), { type: 'Charge' });
         case 'ClaudeSonnet4_6':
             return Object.assign({}, ClaudeSonnet46ToJSON(value), { type: 'ClaudeSonnet4_6' });
+        case 'Flux2KleinI2I':
+            return Object.assign({}, Flux2KleinI2IToJSON(value), { type: 'Flux2KleinI2I' });
         case 'Flux2Pro':
             return Object.assign({}, Flux2ProToJSON(value), { type: 'Flux2Pro' });
         case 'GooglePay':

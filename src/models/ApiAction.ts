@@ -33,6 +33,13 @@ import {
     ClaudeSonnet46FromJSONTyped,
     ClaudeSonnet46ToJSON,
 } from './ClaudeSonnet46';
+import type { Flux2KleinI2I } from './Flux2KleinI2I';
+import {
+    instanceOfFlux2KleinI2I,
+    Flux2KleinI2IFromJSON,
+    Flux2KleinI2IFromJSONTyped,
+    Flux2KleinI2IToJSON,
+} from './Flux2KleinI2I';
 import type { Flux2Pro } from './Flux2Pro';
 import {
     instanceOfFlux2Pro,
@@ -88,7 +95,7 @@ import {
  * 
  * @export
  */
-export type ApiAction = { type: 'ApplePay' } & ApplePay | { type: 'Charge' } & Charge | { type: 'ClaudeSonnet4_6' } & ClaudeSonnet46 | { type: 'Flux2Pro' } & Flux2Pro | { type: 'GooglePay' } & GooglePay | { type: 'Ltx2_3A2V' } & Ltx23A2V | { type: 'LyricSync' } & LyricSync | { type: 'NanoBanana2' } & NanoBanana2 | { type: 'Stripe' } & Stripe | { type: 'ZImageTurbo' } & ZImageTurbo;
+export type ApiAction = { type: 'ApplePay' } & ApplePay | { type: 'Charge' } & Charge | { type: 'ClaudeSonnet4_6' } & ClaudeSonnet46 | { type: 'Flux2KleinI2I' } & Flux2KleinI2I | { type: 'Flux2Pro' } & Flux2Pro | { type: 'GooglePay' } & GooglePay | { type: 'Ltx2_3A2V' } & Ltx23A2V | { type: 'LyricSync' } & LyricSync | { type: 'NanoBanana2' } & NanoBanana2 | { type: 'Stripe' } & Stripe | { type: 'ZImageTurbo' } & ZImageTurbo;
 
 export function ApiActionFromJSON(json: any): ApiAction {
     return ApiActionFromJSONTyped(json, false);
@@ -105,6 +112,8 @@ export function ApiActionFromJSONTyped(json: any, ignoreDiscriminator: boolean):
             return Object.assign({}, ChargeFromJSONTyped(json, true), { type: 'Charge' } as const);
         case 'ClaudeSonnet4_6':
             return Object.assign({}, ClaudeSonnet46FromJSONTyped(json, true), { type: 'ClaudeSonnet4_6' } as const);
+        case 'Flux2KleinI2I':
+            return Object.assign({}, Flux2KleinI2IFromJSONTyped(json, true), { type: 'Flux2KleinI2I' } as const);
         case 'Flux2Pro':
             return Object.assign({}, Flux2ProFromJSONTyped(json, true), { type: 'Flux2Pro' } as const);
         case 'GooglePay':
@@ -139,6 +148,8 @@ export function ApiActionToJSONTyped(value?: ApiAction | null, ignoreDiscriminat
             return Object.assign({}, ChargeToJSON(value), { type: 'Charge' } as const);
         case 'ClaudeSonnet4_6':
             return Object.assign({}, ClaudeSonnet46ToJSON(value), { type: 'ClaudeSonnet4_6' } as const);
+        case 'Flux2KleinI2I':
+            return Object.assign({}, Flux2KleinI2IToJSON(value), { type: 'Flux2KleinI2I' } as const);
         case 'Flux2Pro':
             return Object.assign({}, Flux2ProToJSON(value), { type: 'Flux2Pro' } as const);
         case 'GooglePay':
