@@ -1,26 +1,26 @@
 
-# ApiKey
+# Qwen3AsrFlash
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`id` | string
-`key` | string
-`userId` | string
+`audio` | string
+`lyrics` | string
+`type` | string
 
 ## Example
 
 ```typescript
-import type { ApiKey } from 'jsapi'
+import type { Qwen3AsrFlash } from 'jsapi'
 
 // TODO: Update the object below with actual values
 const example = {
-  "id": null,
-  "key": null,
-  "userId": null,
-} satisfies ApiKey
+  "audio": null,
+  "lyrics": null,
+  "type": null,
+} satisfies Qwen3AsrFlash
 
 console.log(example)
 
@@ -29,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ApiKey
+const exampleParsed = JSON.parse(exampleJSON) as Qwen3AsrFlash
 console.log(exampleParsed)
 ```
 

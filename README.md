@@ -1,6 +1,6 @@
 # jsapi@4.5.0
 
-A TypeScript SDK client for the api.earnfemi.com API.
+A TypeScript SDK client for the femi.market API.
 
 ## Usage
 
@@ -50,12 +50,11 @@ example().catch(console.error);
 
 ### API Endpoints
 
-All URIs are relative to *https://api.earnfemi.com*
+All URIs are relative to *https://femi.market*
 
 | Class | Method | HTTP request | Description
 | ----- | ------ | ------------ | -------------
 *ApiHandlerApi* | [**apiHandler**](docs/ApiHandlerApi.md#apihandler) | **POST** /api | 
-*ApiKeyRouteApi* | [**apiKey**](docs/ApiKeyRouteApi.md#apikey) | **POST** /api_key | 
 
 
 ### Models
@@ -64,7 +63,6 @@ All URIs are relative to *https://api.earnfemi.com*
 - [ApiAction](docs/ApiAction.md)
 - [ApiChatMessage](docs/ApiChatMessage.md)
 - [ApiChatRole](docs/ApiChatRole.md)
-- [ApiKey](docs/ApiKey.md)
 - [ApiStatus](docs/ApiStatus.md)
 - [ApplePay](docs/ApplePay.md)
 - [CharacterAlignment](docs/CharacterAlignment.md)
@@ -75,9 +73,10 @@ All URIs are relative to *https://api.earnfemi.com*
 - [Flux2Pro](docs/Flux2Pro.md)
 - [GooglePay](docs/GooglePay.md)
 - [Ltx23A2V](docs/Ltx23A2V.md)
-- [LyricSync](docs/LyricSync.md)
 - [NanoBanana2](docs/NanoBanana2.md)
-- [Stripe](docs/Stripe.md)
+- [Qwen3635bA3b](docs/Qwen3635bA3b.md)
+- [Qwen3AsrFlash](docs/Qwen3AsrFlash.md)
+- [Qwen3ForcedAligner06B](docs/Qwen3ForcedAligner06B.md)
 - [WordAlignment](docs/WordAlignment.md)
 - [ZImageTurbo](docs/ZImageTurbo.md)
 

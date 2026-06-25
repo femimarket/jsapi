@@ -1,34 +1,24 @@
 
-# Stripe
+# Qwen3635bA3b
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`amountCents` | number
-`credit` | number
-`loaded` | boolean
-`paymentUrl` | string
-`stripePaymentIntentId` | string
-`stripeSessionId` | string
+`messages` | [Array&lt;ApiChatMessage&gt;](ApiChatMessage.md)
 `type` | string
 
 ## Example
 
 ```typescript
-import type { Stripe } from 'jsapi'
+import type { Qwen3635bA3b } from 'jsapi'
 
 // TODO: Update the object below with actual values
 const example = {
-  "amountCents": null,
-  "credit": null,
-  "loaded": null,
-  "paymentUrl": null,
-  "stripePaymentIntentId": null,
-  "stripeSessionId": null,
+  "messages": null,
   "type": null,
-} satisfies Stripe
+} satisfies Qwen3635bA3b
 
 console.log(example)
 
@@ -37,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as Stripe
+const exampleParsed = JSON.parse(exampleJSON) as Qwen3635bA3b
 console.log(exampleParsed)
 ```
 

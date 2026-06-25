@@ -24,40 +24,40 @@ import {
 /**
  * 
  * @export
- * @interface ClaudeSonnet46
+ * @interface Qwen3635bA3b
  */
-export interface ClaudeSonnet46 {
+export interface Qwen3635bA3b {
     /**
      * 
      * @type {Array<ApiChatMessage>}
-     * @memberof ClaudeSonnet46
+     * @memberof Qwen3635bA3b
      */
     messages: Array<ApiChatMessage>;
     /**
      * 
-     * @type {ClaudeSonnet46TypeEnum}
-     * @memberof ClaudeSonnet46
+     * @type {Qwen3635bA3bTypeEnum}
+     * @memberof Qwen3635bA3b
      */
-    type: 'ClaudeSonnet4_6';
+    type: 'Qwen3_6_35bA3b';
 }
 
 
 
 
 /**
- * Check if a given object implements the ClaudeSonnet46 interface.
+ * Check if a given object implements the Qwen3635bA3b interface.
  */
-export function instanceOfClaudeSonnet46(value: object): value is ClaudeSonnet46 {
+export function instanceOfQwen3635bA3b(value: object): value is Qwen3635bA3b {
     if (!('messages' in value) || value['messages'] === undefined) return false;
     if (!('type' in value) || value['type'] === undefined) return false;
     return true;
 }
 
-export function ClaudeSonnet46FromJSON(json: any): ClaudeSonnet46 {
-    return ClaudeSonnet46FromJSONTyped(json, false);
+export function Qwen3635bA3bFromJSON(json: any): Qwen3635bA3b {
+    return Qwen3635bA3bFromJSONTyped(json, false);
 }
 
-export function ClaudeSonnet46FromJSONTyped(json: any, ignoreDiscriminator: boolean): ClaudeSonnet46 {
+export function Qwen3635bA3bFromJSONTyped(json: any, ignoreDiscriminator: boolean): Qwen3635bA3b {
     if (json == null) {
         return json;
     }
@@ -68,11 +68,11 @@ export function ClaudeSonnet46FromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
-export function ClaudeSonnet46ToJSON(json: any): ClaudeSonnet46 {
-    return ClaudeSonnet46ToJSONTyped(json, false);
+export function Qwen3635bA3bToJSON(json: any): Qwen3635bA3b {
+    return Qwen3635bA3bToJSONTyped(json, false);
 }
 
-export function ClaudeSonnet46ToJSONTyped(value?: ClaudeSonnet46 | null, ignoreDiscriminator: boolean = false): any {
+export function Qwen3635bA3bToJSONTyped(value?: Qwen3635bA3b | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

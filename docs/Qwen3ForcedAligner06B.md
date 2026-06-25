@@ -1,5 +1,5 @@
 
-# LyricSync
+# Qwen3ForcedAligner06B
 
 
 ## Properties
@@ -15,7 +15,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { LyricSync } from 'jsapi'
+import type { Qwen3ForcedAligner06B } from 'jsapi'
 
 // TODO: Update the object below with actual values
 const example = {
@@ -24,7 +24,7 @@ const example = {
   "lyrics": null,
   "type": null,
   "words": null,
-} satisfies LyricSync
+} satisfies Qwen3ForcedAligner06B
 
 console.log(example)
 
@@ -33,7 +33,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as LyricSync
+const exampleParsed = JSON.parse(exampleJSON) as Qwen3ForcedAligner06B
 console.log(exampleParsed)
 ```
 

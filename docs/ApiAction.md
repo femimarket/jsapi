@@ -16,14 +16,10 @@ Name | Type
 `image` | string
 `image2` | string
 `messages` | [Array&lt;ApiChatMessage&gt;](ApiChatMessage.md)
-`amountCents` | number
 `credit` | number
-`loaded` | boolean
-`paymentUrl` | string
-`stripePaymentIntentId` | string
-`stripeSessionId` | string
 `currency` | string
 `jws` | string
+`loaded` | boolean
 `price` | number
 `productId` | string
 `transactionId` | string
@@ -51,14 +47,10 @@ const example = {
   "image": null,
   "image2": null,
   "messages": null,
-  "amountCents": null,
   "credit": null,
-  "loaded": null,
-  "paymentUrl": null,
-  "stripePaymentIntentId": null,
-  "stripeSessionId": null,
   "currency": null,
   "jws": null,
+  "loaded": null,
   "price": null,
   "productId": null,
   "transactionId": null,
