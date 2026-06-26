@@ -26,9 +26,7 @@ Name | Type
 `orderId` | string
 `packageName` | string
 `purchaseToken` | string
-`characters` | [Array&lt;CharacterAlignment&gt;](CharacterAlignment.md)
 `lyrics` | string
-`words` | [Array&lt;WordAlignment&gt;](WordAlignment.md)
 
 ## Example
 
@@ -57,9 +55,7 @@ const example = {
   "orderId": null,
   "packageName": null,
   "purchaseToken": null,
-  "characters": null,
   "lyrics": null,
-  "words": null,
 } satisfies ApiAction
 
 console.log(example)

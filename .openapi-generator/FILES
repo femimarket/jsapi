@@ -9,7 +9,6 @@ docs/ApiChatRole.md
 docs/ApiHandlerApi.md
 docs/ApiStatus.md
 docs/ApplePay.md
-docs/CharacterAlignment.md
 docs/Charge.md
 docs/ClaudeSonnet46.md
 docs/Flux2DevI2I.md
@@ -20,8 +19,6 @@ docs/Ltx23A2V.md
 docs/NanoBanana2.md
 docs/Qwen3635bA3b.md
 docs/Qwen3AsrFlash.md
-docs/Qwen3ForcedAligner06B.md
-docs/WordAlignment.md
 docs/ZImageTurbo.md
 package.json
 src/apis/ApiHandlerApi.ts
@@ -33,7 +30,6 @@ src/models/ApiChatMessage.ts
 src/models/ApiChatRole.ts
 src/models/ApiStatus.ts
 src/models/ApplePay.ts
-src/models/CharacterAlignment.ts
 src/models/Charge.ts
 src/models/ClaudeSonnet46.ts
 src/models/Flux2DevI2I.ts
@@ -44,8 +40,6 @@ src/models/Ltx23A2V.ts
 src/models/NanoBanana2.ts
 src/models/Qwen3635bA3b.ts
 src/models/Qwen3AsrFlash.ts
-src/models/Qwen3ForcedAligner06B.ts
-src/models/WordAlignment.ts
 src/models/ZImageTurbo.ts
 src/models/index.ts
 src/runtime.ts

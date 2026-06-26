@@ -89,13 +89,6 @@ import {
     Qwen3AsrFlashFromJSONTyped,
     Qwen3AsrFlashToJSON,
 } from './Qwen3AsrFlash';
-import type { Qwen3ForcedAligner06B } from './Qwen3ForcedAligner06B';
-import {
-    instanceOfQwen3ForcedAligner06B,
-    Qwen3ForcedAligner06BFromJSON,
-    Qwen3ForcedAligner06BFromJSONTyped,
-    Qwen3ForcedAligner06BToJSON,
-} from './Qwen3ForcedAligner06B';
 import type { ZImageTurbo } from './ZImageTurbo';
 import {
     instanceOfZImageTurbo,
@@ -109,7 +102,7 @@ import {
  * 
  * @export
  */
-export type ApiAction = { type: 'ApplePay' } & ApplePay | { type: 'Charge' } & Charge | { type: 'ClaudeSonnet4_6' } & ClaudeSonnet46 | { type: 'Flux2DevI2I' } & Flux2DevI2I | { type: 'Flux2KleinI2I' } & Flux2KleinI2I | { type: 'Flux2Pro' } & Flux2Pro | { type: 'GooglePay' } & GooglePay | { type: 'Ltx2_3A2V' } & Ltx23A2V | { type: 'NanoBanana2' } & NanoBanana2 | { type: 'Qwen3AsrFlash' } & Qwen3AsrFlash | { type: 'Qwen3ForcedAligner0_6B' } & Qwen3ForcedAligner06B | { type: 'Qwen3_6_35bA3b' } & Qwen3635bA3b | { type: 'ZImageTurbo' } & ZImageTurbo;
+export type ApiAction = { type: 'ApplePay' } & ApplePay | { type: 'Charge' } & Charge | { type: 'ClaudeSonnet4_6' } & ClaudeSonnet46 | { type: 'Flux2DevI2I' } & Flux2DevI2I | { type: 'Flux2KleinI2I' } & Flux2KleinI2I | { type: 'Flux2Pro' } & Flux2Pro | { type: 'GooglePay' } & GooglePay | { type: 'Ltx2_3A2V' } & Ltx23A2V | { type: 'NanoBanana2' } & NanoBanana2 | { type: 'Qwen3AsrFlash' } & Qwen3AsrFlash | { type: 'Qwen3_6_35bA3b' } & Qwen3635bA3b | { type: 'ZImageTurbo' } & ZImageTurbo;
 
 export function ApiActionFromJSON(json: any): ApiAction {
     return ApiActionFromJSONTyped(json, false);
@@ -140,8 +133,6 @@ export function ApiActionFromJSONTyped(json: any, ignoreDiscriminator: boolean):
             return Object.assign({}, NanoBanana2FromJSONTyped(json, true), { type: 'NanoBanana2' } as const);
         case 'Qwen3AsrFlash':
             return Object.assign({}, Qwen3AsrFlashFromJSONTyped(json, true), { type: 'Qwen3AsrFlash' } as const);
-        case 'Qwen3ForcedAligner0_6B':
-            return Object.assign({}, Qwen3ForcedAligner06BFromJSONTyped(json, true), { type: 'Qwen3ForcedAligner0_6B' } as const);
         case 'Qwen3_6_35bA3b':
             return Object.assign({}, Qwen3635bA3bFromJSONTyped(json, true), { type: 'Qwen3_6_35bA3b' } as const);
         case 'ZImageTurbo':
@@ -180,8 +171,6 @@ export function ApiActionToJSONTyped(value?: ApiAction | null, ignoreDiscriminat
             return Object.assign({}, NanoBanana2ToJSON(value), { type: 'NanoBanana2' } as const);
         case 'Qwen3AsrFlash':
             return Object.assign({}, Qwen3AsrFlashToJSON(value), { type: 'Qwen3AsrFlash' } as const);
-        case 'Qwen3ForcedAligner0_6B':
-            return Object.assign({}, Qwen3ForcedAligner06BToJSON(value), { type: 'Qwen3ForcedAligner0_6B' } as const);
         case 'Qwen3_6_35bA3b':
             return Object.assign({}, Qwen3635bA3bToJSON(value), { type: 'Qwen3_6_35bA3b' } as const);
         case 'ZImageTurbo':
